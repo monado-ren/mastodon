@@ -1,0 +1,24 @@
+:ruby
+  autoplay        ||= current_account&.user&.setting_auto_play_gif
+
+.compact-header
+  %h1 Popular Toots
+
+- cache "popular/#{@page}", expires_in: 5.minutes, race_condition_ttl: 10.seconds do
+  - @popular.each do |status|
+    - cache status, expires_in: 5.minutes, race_condition_ttl: 5.seconds do
+      .activity-stream.activity-stream-headless.h-entry
+        .entry
+          = render "statuses/detailed_status", status: status, include_threads: false, autoplay: autoplay
+    %br
+
+.links
+  - if @page > 1
+    = link_to 'Newer', {page: @page - 1}, class: 'button'
+  - else
+    %br
+  = link_to 'Older', {page: @page + 1}, class: 'button'
+
+:css
+  .links { display: flex; justify-content: space-between }
+  .links > * { flex: 1; max-width: 100px }
