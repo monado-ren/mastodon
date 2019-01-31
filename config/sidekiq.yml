@@ -26,6 +26,9 @@
       interval: 1 minute
       class: Scheduler::IndexingScheduler
       queue: scheduler
+  registration_checker_scheduler:
+    every: '30m'
+    class: Scheduler::RegistrationCheckerScheduler
     vacuum_scheduler:
       cron: '<%= Random.rand(0..59) %> <%= Random.rand(3..5) %> * * *'
       class: Scheduler::VacuumScheduler

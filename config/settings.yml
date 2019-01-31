@@ -39,6 +39,7 @@ defaults: &defaults
   require_invite_text: false
   backups_retention_period: 7
   captcha_enabled: false
+  #max_users_limit: 700
 
 development:
   <<: *defaults
