@@ -104,6 +104,11 @@ class TextFormatter
 
   def link_to_mention(entity)
     username, domain = entity[:screen_name].split('@')
+
+    return link_to_twitter(username) if domain == "twitter.com"
+    return link_to_instagram(username) if domain == "instagram.com"
+    return link_to_github(username) if domain == "github.com"
+    return link_to_telegram(username) if ["telegram.org", "t.me"].include? domain
     domain           = nil if local_domain?(domain)
     account          = nil
 
@@ -131,6 +136,30 @@ class TextFormatter
 
     <<~HTML.squish
       <span class="h-card" translate="no"><a href="#{h(url)}" class="u-url mention">@<span>#{h(display_username)}</span></a></span>
+    HTML
+  end
+
+  def link_to_github(username)
+    <<~HTML.squish
+      <span class="h-card"><a href="https://github.com/#{username}" title="#{username}@github.com" rel="noopener noreferrer" class="u-url mention">@<span>#{username}</span></a></spanV
+    HTML
+  end
+
+  def link_to_instagram(username)
+    <<~HTML.squish
+      <span class="h-card"><a href="https://instagram.com/#{username}" title="#{username}@instagram.com" rel="noopener noreferrer" class="u-url mention">@<span>#{username}</span></a></span>
+    HTML
+  end
+
+  def link_to_twitter(username)
+    <<~HTML.squish
+      <span class="h-card"><a href="https://twitter.com/#{username}" title="#{username}@twitter.com" rel="noopener noreferrer" class="u-url mention">@<span>#{username}</span></a></span>
+    HTML
+  end
+
+  def link_to_telegram(username)
+    <<~HTML.squish
+      <span class="h-card"><a href="https://t.me/#{username}" title="#{username}@t.me" rel="noopener noreferrer" class="u-url mention">@<span>#{username}</span></a></span>
     HTML
   end
 
