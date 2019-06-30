@@ -15,6 +15,7 @@ import AutosuggestInput from '../../../components/autosuggest_input';
 import AutosuggestTextarea from '../../../components/autosuggest_textarea';
 import Button from '../../../components/button';
 import EmojiPickerDropdown from '../containers/emoji_picker_dropdown_container';
+import FederationDropdownContainer from '../containers/federation_dropdown_container';
 import LanguageDropdown from '../containers/language_dropdown_container';
 import PollButtonContainer from '../containers/poll_button_container';
 import PollFormContainer from '../containers/poll_form_container';
@@ -50,6 +51,7 @@ class ComposeForm extends ImmutablePureComponent {
     suggestions: ImmutablePropTypes.list,
     spoiler: PropTypes.bool,
     privacy: PropTypes.string,
+    federation: PropTypes.bool,
     spoilerText: PropTypes.string,
     focusDate: PropTypes.instanceOf(Date),
     caretPosition: PropTypes.number,
@@ -293,6 +295,7 @@ class ComposeForm extends ImmutablePureComponent {
               <PollButtonContainer />
               <PrivacyDropdownContainer disabled={this.props.isEditing} />
               <SpoilerButtonContainer />
+              <FederationDropdownContainer disabled={this.props.isEditing} />
               <LanguageDropdown />
             </div>
 

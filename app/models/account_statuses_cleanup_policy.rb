@@ -144,6 +144,10 @@ class AccountStatusesCleanupPolicy < ApplicationRecord
     Status.where(id: ..max_id)
   end
 
+  def without_local_scope
+    Status.where(local_only: false)
+  end
+
   def without_self_fav_scope
     Status.where('NOT EXISTS (SELECT 1 FROM favourites fav WHERE fav.account_id = statuses.account_id AND fav.status_id = statuses.id)')
   end

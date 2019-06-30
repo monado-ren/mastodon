@@ -274,6 +274,7 @@
   "status.embed": "ఎంబెడ్",
   "status.filtered": "వడకట్టబడిన",
   "status.load_more": "మరిన్ని లోడ్ చేయి",
+  "status.local_only": "This post is only visible by other users of your instance",
   "status.media_hidden": "మీడియా దాచబడింది",
   "status.mention": "@{name}ను ప్రస్తావించు",
   "status.more": "ఇంకొన్ని",

@@ -16,6 +16,9 @@ class UserSettings
   setting :default_sensitive, default: false
   setting :default_privacy, default: nil, in: %w(public unlisted private)
 
+  # Donte: New posts should federate by default
+  setting :default_federation, default: true
+
   setting_inverse_alias :indexable, :noindex
 
   namespace :web do

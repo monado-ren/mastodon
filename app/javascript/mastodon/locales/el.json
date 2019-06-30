@@ -562,6 +562,7 @@
   "status.history.created": "{name} δημιούργησε στις {date}",
   "status.history.edited": "{name} επεξεργάστηκε στις {date}",
   "status.load_more": "Φόρτωσε περισσότερα",
+  "status.local_only": "This post is only visible by other users of your instance",
   "status.media_hidden": "Κρυμμένο πολυμέσο",
   "status.mention": "Επισήμανε @{name}",
   "status.more": "Περισσότερα",

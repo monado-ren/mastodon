@@ -29,6 +29,7 @@ const messages = defineMessages({
   unlisted_short: { id: 'privacy.unlisted.short', defaultMessage: 'Unlisted' },
   private_short: { id: 'privacy.private.short', defaultMessage: 'Followers only' },
   direct_short: { id: 'privacy.direct.short', defaultMessage: 'Mentioned people only' },
+  local_only: { id: 'status.local_only', defaultMessage: 'This post is only visible by other users of your instance' },
 });
 
 class DetailedStatus extends ImmutablePureComponent {
@@ -148,6 +149,7 @@ class DetailedStatus extends ImmutablePureComponent {
     let media           = '';
     let applicationLink = '';
     let reblogLink = '';
+    let localOnly = '';
     let reblogIcon = 'retweet';
     let favouriteLink = '';
     let edited = '';
@@ -263,6 +265,10 @@ class DetailedStatus extends ImmutablePureComponent {
       );
     }
 
+    if(status.get('local_only')) {
+      localOnly = <span> · <i className='fa fa-chain-broken' title={intl.formatMessage(messages.local_only)} /></span>;
+    }
+
     if (this.context.router) {
       favouriteLink = (
         <Link to={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}/favourites`} className='detailed-status__link'>
@@ -324,7 +330,7 @@ class DetailedStatus extends ImmutablePureComponent {
           <div className='detailed-status__meta'>
             <a className='detailed-status__datetime' href={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}`} target='_blank' rel='noopener noreferrer'>
               <FormattedDate value={new Date(status.get('created_at'))} hour12={false} year='numeric' month='short' day='2-digit' hour='2-digit' minute='2-digit' />
-            </a>{edited}{visibilityLink}{applicationLink}{reblogLink} · {favouriteLink}
+            </a>{edited}{visibilityLink}{applicationLink}{reblogLink} · {favouriteLink}{localOnly}
           </div>
         </div>
       </div>

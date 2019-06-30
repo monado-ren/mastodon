@@ -30,6 +30,7 @@ class Form::AdminSettings
     show_domain_blocks
     show_domain_blocks_rationale
     noindex
+    default_federation
     require_invite_text
     media_cache_retention_period
     content_cache_retention_period
@@ -55,6 +56,7 @@ class Form::AdminSettings
     trends_as_landing_page
     trendable_by_default
     noindex
+    default_federation
     require_invite_text
     captcha_enabled
     authorized_fetch

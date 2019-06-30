@@ -516,6 +516,7 @@
   "status.history.created": "{name} o creèt lo {date}",
   "status.history.edited": "{name} o modifiquèt lo {date}",
   "status.load_more": "Cargar mai",
+  "status.local_only": "This post is only visible by other users of your instance",
   "status.media_hidden": "Mèdia rescondut",
   "status.mention": "Mencionar",
   "status.more": "Mai",

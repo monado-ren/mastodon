@@ -359,6 +359,7 @@
   "status.embed": "Integrà",
   "status.filtered": "Filtratu",
   "status.load_more": "Vede di più",
+  "status.local_only": "This post is only visible by other users of your instance",
   "status.media_hidden": "Media piattata",
   "status.mention": "Mintuvà @{name}",
   "status.more": "Più",

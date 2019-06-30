@@ -5,6 +5,7 @@ module Settings
     DEFAULTING_TO_UNSCOPED = %w(
       theme
       noindex
+      default_federation
     ).freeze
 
     def initialize(object)

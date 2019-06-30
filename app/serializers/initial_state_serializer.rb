@@ -74,6 +74,7 @@ class InitialStateSerializer < ActiveModel::Serializer
       store[:default_privacy]   = object.visibility || object.current_account.user.setting_default_privacy
       store[:default_sensitive] = object.current_account.user.setting_default_sensitive
       store[:default_language]  = object.current_account.user.preferred_posting_language
+      store[:default_federation] = object.current_account.user.setting_default_federation
     end
 
     store[:text] = object.text if object.text

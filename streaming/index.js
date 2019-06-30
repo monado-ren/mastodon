@@ -770,6 +770,12 @@ const startServer = async () => {
     const listener = message => {
       const { event, payload } = message;
 
+      // Only send local-only statuses to logged-in users
+      if (payload.local_only && !req.accountId) {
+        log.silly(req.requestId, `Message ${payload.id} filtered because it was local-only`);
+        return;
+      }
+
       // Streaming only needs to apply filtering to some channels and only to
       // some events. This is because majority of the filtering happens on the
       // Ruby on Rails side when producing the event for streaming.

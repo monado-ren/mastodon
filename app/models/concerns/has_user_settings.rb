@@ -134,4 +134,10 @@ module HasUserSettings
   def hide_all_media?
     settings['web.display_media'] == 'hide_all'
   end
+
+  ## Donte-specific settings
+
+  def setting_default_federation
+    settings['default_federation']
+  end
 end

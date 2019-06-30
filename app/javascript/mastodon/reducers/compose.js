@@ -31,6 +31,7 @@ import {
   COMPOSE_SPOILERNESS_CHANGE,
   COMPOSE_SPOILER_TEXT_CHANGE,
   COMPOSE_VISIBILITY_CHANGE,
+  COMPOSE_FEDERATION_CHANGE,
   COMPOSE_LANGUAGE_CHANGE,
   COMPOSE_COMPOSING_CHANGE,
   COMPOSE_EMOJI_INSERT,
@@ -63,6 +64,7 @@ const initialState = ImmutableMap({
   spoiler: false,
   spoiler_text: '',
   privacy: null,
+  federation: null,
   id: null,
   text: '',
   focusDate: null,
@@ -82,6 +84,7 @@ const initialState = ImmutableMap({
   suggestion_token: null,
   suggestions: ImmutableList(),
   default_privacy: 'public',
+  default_federation: true,
   default_sensitive: false,
   default_language: 'en',
   resetFileKey: Math.floor((Math.random() * 0x10000)),
@@ -122,6 +125,7 @@ function clearAll(state) {
     map.set('is_changing_upload', false);
     map.set('in_reply_to', null);
     map.set('privacy', state.get('default_privacy'));
+    map.set('federation', state.get('default_federation'));
     map.set('sensitive', state.get('default_sensitive'));
     map.set('language', state.get('default_language'));
     map.update('media_attachments', list => list.clear());
@@ -314,6 +318,10 @@ export default function compose(state = initialState, action) {
     return state
       .set('spoiler_text', action.text)
       .set('idempotencyKey', uuid());
+  case COMPOSE_FEDERATION_CHANGE:
+    return state
+      .set('federation', action.value)
+      .set('idempotencyKey', uuid());
   case COMPOSE_VISIBILITY_CHANGE:
     return state
       .set('privacy', action.value)
@@ -330,6 +338,7 @@ export default function compose(state = initialState, action) {
       map.set('in_reply_to', action.status.get('id'));
       map.set('text', statusToTextMentions(state, action.status));
       map.set('privacy', privacyPreference(action.status.get('visibility'), state.get('default_privacy')));
+      map.set('federation', !action.status.get('local_only'));
       map.set('focusDate', new Date());
       map.set('caretPosition', null);
       map.set('preselectDate', new Date());
@@ -465,6 +474,7 @@ export default function compose(state = initialState, action) {
       map.set('focusDate', new Date());
       map.set('caretPosition', null);
       map.set('idempotencyKey', uuid());
+      map.set('federation', !action.status.get('local_only'));
       map.set('sensitive', action.status.get('sensitive'));
       map.set('language', action.status.get('language'));
       map.set('id', null);
@@ -495,6 +505,7 @@ export default function compose(state = initialState, action) {
       map.set('focusDate', new Date());
       map.set('caretPosition', null);
       map.set('idempotencyKey', uuid());
+      map.set('federation', !action.status.get('local_only'));
       map.set('sensitive', action.status.get('sensitive'));
       map.set('language', action.status.get('language'));
 

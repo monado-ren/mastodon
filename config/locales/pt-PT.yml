@@ -1659,6 +1659,7 @@ pt-PT:
     edited_at_html: Editado em %{date}
     errors:
       in_reply_not_found: A publicação a que está a tentar responder parece não existir.
+    local_only: Somente local
     open_in_web: Abrir na Teia
     over_character_limit: limite de caracter excedeu %{max}
     pin_errors:

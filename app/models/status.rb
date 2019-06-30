@@ -27,6 +27,7 @@
 #  edited_at                    :datetime
 #  trendable                    :boolean
 #  ordered_media_attachment_ids :bigint(8)        is an Array
+#  local_only             :boolean
 #
 
 class Status < ApplicationRecord
@@ -103,6 +104,7 @@ class Status < ApplicationRecord
   scope :with_accounts, ->(ids) { where(id: ids).includes(:account) }
   scope :without_replies, -> { where('statuses.reply = FALSE OR statuses.in_reply_to_account_id = statuses.account_id') }
   scope :without_reblogs, -> { where(statuses: { reblog_of_id: nil }) }
+  scope :without_local_only, -> { where(local_only: [false, nil]) }
   scope :with_public_visibility, -> { where(visibility: :public) }
   scope :tagged_with, ->(tag_ids) { joins(:statuses_tags).where(statuses_tags: { tag_id: tag_ids }) }
   scope :excluding_silenced_accounts, -> { left_outer_joins(:account).where(accounts: { silenced_at: nil }) }
@@ -134,6 +136,8 @@ class Status < ApplicationRecord
   before_validation :set_visibility
   before_validation :set_conversation
   before_validation :set_local
+
+  before_create :set_locality
 
   around_create Mastodon::Snowflake::Callbacks
 
@@ -187,6 +191,10 @@ class Status < ApplicationRecord
 
   def local?
     attributes['local'] || uri.nil?
+  end
+
+  def local_only?
+    local_only
   end
 
   def in_reply_to_local_account?
@@ -428,6 +436,10 @@ class Status < ApplicationRecord
 
   def set_local
     self.local = account.local?
+  end
+
+  def set_locality
+    self.local_only = reblog.local_only if reblog?
   end
 
   def update_statistics

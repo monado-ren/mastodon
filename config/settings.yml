@@ -14,6 +14,7 @@ defaults: &defaults
   closed_registrations_message: ''
   timeline_preview: true
   show_staff_badge: true
+  default_federation: true
   preview_sensitive_media: false
   noindex: false
   theme: 'default'
