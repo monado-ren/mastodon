@@ -130,6 +130,7 @@ zh-TW:
         setting_theme: 站點主題
         setting_trends: 顯示本日趨勢
         setting_unfollow_modal: 取消關注某人前先詢問我
+        setting_disable_swiping: 禁用主頁滑動
         setting_use_pending_items: 限速模式
         severity: 優先級
         type: 匯入類型
