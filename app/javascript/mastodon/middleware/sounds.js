@@ -25,12 +25,10 @@ const play = audio => {
 export default function soundsMiddleware() {
   const soundCache = {
     boop: createAudio([
-/*
       {
         src: '/sounds/boop.ogg',
         type: 'audio/ogg',
       },
-*/
       {
         src: '/sounds/boop.mp3',
         type: 'audio/mpeg',
