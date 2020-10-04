@@ -243,8 +243,8 @@ class ComposeForm extends ImmutablePureComponent {
             <UploadButtonContainer />
             <PollButtonContainer />
             <PrivacyDropdownContainer />
-            <SpoilerButtonContainer />
             <FederationDropdownContainer />
+			<SpoilerButtonContainer />
           </div>
           <div className='character-counter__wrapper'><CharacterCounter max={9999} text={text} /></div>
         </div>
