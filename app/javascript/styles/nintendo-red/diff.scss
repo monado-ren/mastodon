@@ -446,7 +446,7 @@ html {
     &:hover,
     &:active,
     &:focus {
-      background: $active-color;
+      background: $ui-active-color;
     }
 
     &.active {
@@ -454,7 +454,7 @@ html {
       &:active,
       &:focus {
         background: transparent;
-        border-bottom-color: $active-color;
+        border-bottom-color: $ui-active-color;
       }
     }
   }
