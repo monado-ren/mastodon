@@ -251,10 +251,10 @@ class EmojiPickerMenu extends React.PureComponent {
         <EmojiPicker
           perLine={8}
           emojiSize={22}
-          sheetSize={32}
+          sheetSize={64}
           custom={buildCustomEmojis(custom_emojis)}
           color=''
-          emoji=''
+          emoji='grinning'
           set='twitter'
           title={title}
           i18n={this.getI18n()}
@@ -262,7 +262,7 @@ class EmojiPickerMenu extends React.PureComponent {
           include={categoriesSort}
           recent={frequentlyUsedEmojis}
           skin={skinTone}
-          showPreview={false}
+          showPreview
           backgroundImageFn={backgroundImageFn}
           autoFocus
           emojiTooltip
