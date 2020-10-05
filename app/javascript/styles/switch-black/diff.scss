@@ -1,0 +1,142 @@
+// components.scss
+.compose-form {
+  .compose-form__modifiers {
+    .compose-form__upload {
+      &-description {
+        input {
+          &::placeholder {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rich-formatting a,
+.rich-formatting p a,
+.rich-formatting li a,
+.landing-page__short-description p a,
+.status__content a,
+.reply-indicator__content a {
+  color: lighten($ui-highlight-color, 12%);
+  text-decoration: underline;
+
+  &.mention {
+    text-decoration: none;
+  }
+
+  &.mention span {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &.status__content__spoiler-link {
+    color: $secondary-text-color;
+    text-decoration: none;
+  }
+}
+
+.status__content__read-more-button {
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.getting-started__footer a {
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.nothing-here {
+  color: $darker-text-color;
+}
+
+.public-layout .public-account-header__tabs__tabs .counter.active::after {
+  border-bottom: 4px solid $ui-highlight-color;
+}
+
+.compose-form .autosuggest-textarea__textarea::placeholder,
+.compose-form .spoiler-input__input::placeholder {
+  color: $inverted-text-color;
+}
+
+.status__content__read-more-button {
+  color: lighten($blue, 8%);
+}
+.tabs-bar {
+  background: $tabs-back;
+  border: 1px solid lighten($ui-base-color, 8%);
+  border-bottom: 0;
+
+  @media screen and (max-width: $no-gap-breakpoint) {
+    border-top: 0;
+  }
+
+  // &__link {
+  //   color: $black;
+  //   padding-bottom: 14px;
+  //   border-bottom-width: 1px;
+  //   border-bottom-color: lighten($ui-base-color, 8%);
+
+  //   &:hover,
+  //   &:active,
+  //   &:focus {
+  //     background: transparent;
+  //   }
+
+  //   &.active {
+  //     color: $ui-active-color;
+  //     border-bottom: 2px solid $ui-active-color;
+  //     &:hover,
+  //     &:active,
+  //     &:focus {
+  //       background: transparent;
+  //       border-bottom-color: $ui-active-color;
+  //     }
+  //   }
+  // }
+  &__sublink {
+    color: $white;
+    padding-bottom: 14px;
+    border-bottom-width: 1px;
+    border-bottom-color: lighten($ui-base-color, 8%);
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent;
+    }
+
+    &.active {
+      color: $ui-active-color;
+      border-bottom: 2px solid $ui-active-color;
+      &:hover,
+      &:active,
+      &:focus {
+        background: transparent;
+        border-bottom-color: $ui-active-color;
+      }
+    }
+  }
+}
