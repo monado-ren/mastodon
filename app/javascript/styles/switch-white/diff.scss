@@ -443,8 +443,31 @@ html {
     border-top: 0;
   }
 
-  &__link {
-    color: $light-red;
+  // &__link {
+  //   color: $black;
+  //   padding-bottom: 14px;
+  //   border-bottom-width: 1px;
+  //   border-bottom-color: lighten($ui-base-color, 8%);
+
+  //   &:hover,
+  //   &:active,
+  //   &:focus {
+  //     background: transparent;
+  //   }
+
+  //   &.active {
+  //     color: $ui-active-color;
+  //     border-bottom: 2px solid $ui-active-color;
+  //     &:hover,
+  //     &:active,
+  //     &:focus {
+  //       background: transparent;
+  //       border-bottom-color: $ui-active-color;
+  //     }
+  //   }
+  // }
+  &__sublink {
+    color: $black;
     padding-bottom: 14px;
     border-bottom-width: 1px;
     border-bottom-color: lighten($ui-base-color, 8%);
