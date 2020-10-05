@@ -2,11 +2,12 @@
 $black: #000000;
 $white: #ffffff;
 $red: #E70012;
+$light-red: #F599A0;
 
 $classic-base-color: #282c37;
 $classic-primary-color: #9baec8;
 $classic-secondary-color: #d9e1e8;
-$classic-highlight-color: #2b90d9;
+$classic-highlight-color: #fff;
 
 // Differences
 $success-green: lighten(#3c754d, 8%);
@@ -18,9 +19,9 @@ $ui-base-color: $classic-secondary-color !default;
 $ui-base-lighter-color: #b0c0cf;
 $ui-primary-color: #9bcbed;
 $ui-secondary-color: $classic-base-color !default;
-$ui-highlight-color: #2b90d9;
+$ui-highlight-color: #ef4136;
 
-$primary-text-color: $black !default;
+$primary-text-color: $light-red !default;
 $darker-text-color: $classic-base-color !default;
 $dark-text-color: #444b5d;
 $action-button-color: #606984;
@@ -40,5 +41,3 @@ $account-background-color: $white !default;
 @function lighten($color, $amount) {
   @return hsl(hue($color), saturation($color), lightness($color) - $amount);
 }
-
-$emojis-requiring-inversion: 'chains';
