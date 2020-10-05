@@ -425,7 +425,7 @@ html {
   background-color: $white;
 }
 .status__content__read-more-button {
-  color: lighten($red, 8%);
+  color: lighten($blue, 8%);
 }
 // Change the default color used for the text in an empty column or on the error column
 .empty-column-indicator,
@@ -435,7 +435,7 @@ html {
 }
 
 .tabs-bar {
-  background: $red;
+  background: $white;
   border: 1px solid lighten($ui-base-color, 8%);
   border-bottom: 0;
 
