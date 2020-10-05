@@ -123,7 +123,7 @@ html {
   .column-link {
     background: $white;
     border-bottom: 1px solid lighten($ui-base-color, 8%);
-
+    color: $black;
     &:hover,
     &:active,
     &:focus {
@@ -439,6 +439,7 @@ html {
   }
 
   &__link {
+    color: $light-red;
     padding-bottom: 14px;
     border-bottom-width: 1px;
     border-bottom-color: lighten($ui-base-color, 8%);
