@@ -13,7 +13,7 @@ $tabs-back: #2d2d2d;
 $red-bookmark: $warning-red;
 
 // Values from the classic Mastodon UI
-$classic-base-color: #282c37; // Midnight Express
+$classic-base-color: #323232; // Midnight Express
 $classic-primary-color: #9baec8; // Echo Blue
 $classic-secondary-color: #d9e1e8; // Pattens Blue
 $classic-highlight-color: $blue; // Summer Sky
@@ -65,52 +65,3 @@ $font-monospace: "mastodon-font-monospace" !default;
 // Difference
 
 $ui-active-color: $green !default;
-
-// bug ##############
-
-// Dependent colors
-// $black: #4f5150;
-// $white: #bababa;
-// $blue: #01ffcb;
-// $light-red: #F599A0;
-// $green: #18bdff;
-// $tabs-back:#2d2d2d;
-
-// $classic-base-color: #282c37;
-// $classic-primary-color: #9baec8;
-// $classic-secondary-color: #d9e1e8;
-// $classic-highlight-color: $white;
-
-// // Differences
-// $success-green: lighten(#3c754d, 8%);
-
-// $base-overlay-background: $white !default;
-// $valid-value-color: $success-green !default;
-
-// $ui-active-color: $green !default;
-// $ui-base-color: $black !default;
-// $ui-base-lighter-color: #b0c0cf;
-// $ui-primary-color: #9bcbed;
-// $ui-secondary-color: $classic-base-color !default;
-// $ui-highlight-color: $blue;
-
-// $primary-text-color: $black !default;
-// $darker-text-color: $classic-base-color !default;
-// $dark-text-color: #444b5d;
-// $action-button-color: #606984;
-
-// $inverted-text-color: $black !default;
-// $lighter-text-color: $classic-base-color !default;
-// $light-text-color: #444b5d;
-
-// //Newly added colors
-// $account-background-color: $white !default;
-
-// //Invert darkened and lightened colors
-// @function darken($color, $amount) {
-//   @return hsl(hue($color), saturation($color), lightness($color) + $amount);
-// }
-
-// @function lighten($color, $amount) {
-//   @return hsl(hue($color), saturation($color), lightness($color) - $amount);
-// }
