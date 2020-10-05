@@ -421,7 +421,9 @@ html {
 .react-toggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
   background: lighten($ui-highlight-color, 10%);
 }
-
+.search-page {
+  background-color: $white;
+}
 // Change the default color used for the text in an empty column or on the error column
 .empty-column-indicator,
 .error-column {
