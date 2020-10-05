@@ -450,6 +450,8 @@ html {
     }
 
     &.active {
+      color: $ui-active-color;
+      border-bottom: 2px solid $ui-active-color;
       &:hover,
       &:active,
       &:focus {
@@ -637,7 +639,7 @@ html {
 .status__content,
 .reply-indicator__content {
   a {
-    color: $ui-active-color;
+    color: $highlight-text-color;
   }
 }
 
