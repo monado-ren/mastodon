@@ -430,7 +430,7 @@ html {
 }
 
 .tabs-bar {
-  background: $white;
+  background: $red;
   border: 1px solid lighten($ui-base-color, 8%);
   border-bottom: 0;
 
@@ -446,7 +446,7 @@ html {
     &:hover,
     &:active,
     &:focus {
-      background: $ui-base-color;
+      background: $active-color;
     }
 
     &.active {
@@ -454,7 +454,7 @@ html {
       &:active,
       &:focus {
         background: transparent;
-        border-bottom-color: $ui-highlight-color;
+        border-bottom-color: $active-color;
       }
     }
   }
