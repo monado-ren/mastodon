@@ -447,7 +447,7 @@ html {
     &:hover,
     &:active,
     &:focus {
-      background: $ui-active-color;
+      background: transparent;
     }
 
     &.active {
