@@ -2434,6 +2434,10 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "Close",
+        "id": "lightbox.close"
+      },
+      {
         "defaultMessage": "Never miss a thing",
         "id": "notifications_permission_banner.title"
       },
@@ -2522,6 +2526,15 @@
       }
     ],
     "path": "app/javascript/mastodon/features/picture_in_picture/components/footer.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Close",
+        "id": "lightbox.close"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/picture_in_picture/components/header.json"
   },
   {
     "descriptors": [
@@ -3249,6 +3262,19 @@
       }
     ],
     "path": "app/javascript/mastodon/features/ui/components/video_modal.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Compress image view box",
+        "id": "lightbox.compress"
+      },
+      {
+        "defaultMessage": "Expand image view box",
+        "id": "lightbox.expand"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/ui/components/zoomable_image.json"
   },
   {
     "descriptors": [
