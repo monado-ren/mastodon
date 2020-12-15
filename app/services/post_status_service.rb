@@ -139,7 +139,7 @@ class PostStatusService < BaseService
                   end
 
     media_array.each do |media|
-      next if media_attachments.size >= 4
+      next if media_attachments.size >= 9
 
       original  = Addressable::URI.parse(media[0]).normalize.to_s
       thumbnail = thumbnail_remote_url(media[1])

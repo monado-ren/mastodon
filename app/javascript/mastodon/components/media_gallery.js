@@ -132,114 +132,146 @@ class Item extends React.PureComponent {
 
     if (size === 5) {
       height = 50;
-      width = 33.3;
+      width = 33;
 
       if (index === 4) {
         width = 66.6;
       }
 
       if (index < 3) {
-        bottom = 'auto';
+        bottom = '2px';
       } else {
-        top = 'auto';
+        top = '2px';
       }
 
       if (index !== 2 && index !== 4) {
-        right = 'auto';
+        right = '2px';
       }
 
       if (index !== 0 && index !== 3) {
-        left = 'auto';
+        if (index % 3 === 1) {
+          left = '2px';
+        } else {
+          left = '6px';
+        }
       }
     }
 
     if (size === 6) {
       height = 50;
-      width = 33.3;
+      width = 33;
 
       if (index < 3) {
-        bottom = 'auto';
+        bottom = '2px';
       } else {
-        top = 'auto';
+        top = '2px';
       }
 
       if (index !== 2 && index !== 5) {
-        right = 'auto';
+        right = '2px';
       }
 
       if (index !== 0 && index !== 3) {
-        left = 'auto';
+        if (index % 3 === 1) {
+          left = '2px';
+        } else {
+          left = '6px';
+        }
       }
     }
 
     if (size === 7) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index === 6) {
         width = 100;
       }
 
       if (index < 6) {
-        bottom = 'auto';
+        bottom = '2px';
       }
 
       if (index > 2) {
-        top = 'auto';
+        if (parseInt(index/3) === 1) {
+          top = '2px';
+        } else {
+          top = '6px';
+        }
       }
 
       if (index !== 2 && index !== 5 && index !== 6) {
-        right = 'auto';
+        right = '2px';
       }
 
       if (index !== 0 && index !== 3 && index !== 6) {
-        left = 'auto';
+        if (index % 3 === 1) {
+          left = '2px';
+        } else {
+          left = '6px';
+        }
       }
     }
 
     if (size === 8) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index === 7) {
         width = 66.6;
       }
 
       if (index < 6) {
-        bottom = 'auto';
+        bottom = '2px';
       }
 
       if (index > 2) {
-        top = 'auto';
+        if (parseInt(index/3) === 1) {
+          top = '2px';
+        } else {
+          top = '6px';
+        }
       }
 
       if (index !== 2 && index !== 5 && index !== 7) {
-        right = 'auto';
+        right = '2px';
       }
 
       if (index !== 0 && index !== 3 && index !== 6) {
-        left = 'auto';
+        if (index % 3 === 1) {
+          left = '2px';
+        } else {
+          left = '6px';
+        }
       }
     }
 
     if (size === 9) {
-      height = 33.3;
-      width = 33.3;
+      height = 33;
+      width = 33;
 
       if (index < 6) {
-        bottom = 'auto';
+        bottom = '2px';
       }
 
       if (index > 2) {
-        top = 'auto';
+        if (parseInt(index/3) === 1) {
+          top = '2px';
+        } else {
+          top = '6px';
+        }
       }
 
       if (index !== 2 && index !== 5 && index !== 8) {
-        right = 'auto';
+        right = '2px';
       }
 
       if (index !== 0 && index !== 3 && index !== 6) {
-        left = 'auto';
+        if (index % 3 === 1) {
+          left = '2px';
+        } else {
+          left = '6px';
+        }
       }
     }
 
@@ -426,6 +458,8 @@ class MediaGallery extends React.PureComponent {
     const { media, intl, sensitive, height, defaultWidth, standalone, autoplay } = this.props;
     const { visible } = this.state;
 
+    const size     = media.take(9).size;
+
     const width = this.state.width || defaultWidth;
 
     let children, spoilerButton;
@@ -436,13 +470,14 @@ class MediaGallery extends React.PureComponent {
       if (width) {
         style.height = width / this.props.media.getIn([0, 'meta', 'small', 'aspect']);
       }
+    } else if (size > 6) {
+      style.height = width / (1/1);
     } else if (width) {
       style.height = width / (16/9);
     } else {
       style.height = height;
     }
 
-    const size     = media.take(9).size;
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
 
     if (standalone && this.isFullSizeEligible()) {
