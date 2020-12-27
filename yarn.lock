@@ -3669,10 +3669,10 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-detect-passive-events@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/detect-passive-events/-/detect-passive-events-2.0.1.tgz#fdbd6f6dd5e6ac10c6189a4cb26ab264d41c0835"
-  integrity sha512-7WbRn4mznO63FW0KSYa7S3HgCG94uZ6HGZO1TyVRtdZuMNGUeY/ScWrIx45XnUz1LWoLZVi13ULVHqKE07ZfKg==
+detect-passive-events@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/detect-passive-events/-/detect-passive-events-2.0.2.tgz#229d02a20c47371194a2def84144c07d83e324c2"
+  integrity sha512-Ru7Eiz+pCy++QpqaNOgaIjlM0PzxEsh3Etg3wtntNhW2r3H1/8KkcR8bX9ApPIZChiNO2Pz//60uUg29DPNh3Q==
 
 diff-sequences@^25.2.6:
   version "25.2.6"
@@ -5192,6 +5192,7 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
+
 he@1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
@@ -7266,7 +7267,7 @@ node-forge@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
   integrity sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA==
-  
+
 node-html-parser@^1.2.20:
   version "1.2.20"
   resolved "https://registry.npm.taobao.org/node-html-parser/download/node-html-parser-1.2.20.tgz#37e9ebc627dbe3ff446eea4ac93e3d254b7c6ee4"
