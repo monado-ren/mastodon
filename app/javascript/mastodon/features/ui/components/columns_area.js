@@ -31,7 +31,7 @@ import Icon from 'mastodon/components/icon';
 import ComposePanel from './compose_panel';
 import NavigationPanel from './navigation_panel';
 
-import detectPassiveEvents from 'detect-passive-events';
+import { supportsPassiveEvents } from 'detect-passive-events';
 import { scrollRight } from '../../../scroll';
 
 const componentMap = {
@@ -75,12 +75,14 @@ class ColumnsArea extends ImmutablePureComponent {
   }
 
   componentWillReceiveProps() {
-    this.setState({ shouldAnimate: false });
+    if (typeof this.pendingIndex !== 'number' && this.lastIndex !== getIndex(this.context.router.history.location.pathname)) {
+      this.setState({ shouldAnimate: false });
+    }
   }
 
   componentDidMount() {
     if (!this.props.singleColumn) {
-      this.node.addEventListener('wheel', this.handleWheel,  detectPassiveEvents.hasSupport ? { passive: true } : false);
+      this.node.addEventListener('wheel', this.handleWheel, supportsPassiveEvents ? { passive: true } : false);
     }
 
     this.lastIndex   = getIndex(this.context.router.history.location.pathname);
@@ -97,10 +99,15 @@ class ColumnsArea extends ImmutablePureComponent {
 
   componentDidUpdate(prevProps) {
     if (this.props.singleColumn !== prevProps.singleColumn && !this.props.singleColumn) {
-      this.node.addEventListener('wheel', this.handleWheel,  detectPassiveEvents.hasSupport ? { passive: true } : false);
+      this.node.addEventListener('wheel', this.handleWheel, supportsPassiveEvents ? { passive: true } : false);
     }
-    this.lastIndex = getIndex(this.context.router.history.location.pathname);
-    this.setState({ shouldAnimate: true });
+
+    const newIndex = getIndex(this.context.router.history.location.pathname);
+
+    if (this.lastIndex !== newIndex) {
+      this.lastIndex = newIndex;
+      this.setState({ shouldAnimate: true });
+    }
   }
 
   componentWillUnmount () {
