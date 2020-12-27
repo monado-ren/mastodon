@@ -101,6 +101,7 @@ en:
         types:
           disable: Freeze
           none: Send a warning
+          sensitive: Sensitive
           silence: Limit
           suspend: Suspend
         warning_preset_id: Use a warning preset
@@ -126,6 +127,7 @@ en:
         expires_in: Expire after
         fields: Profile metadata
         header: Header
+        honeypot: "%{label} (do not fill in)"
         inbox_url: URL of the relay inbox
         irreversible: Drop instead of hide
         locale: Interface language
