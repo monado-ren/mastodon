@@ -1,0 +1,11 @@
+%table
+  %thead
+    %tr
+      %th='Emoji'
+      %th='Code'
+  %tbody
+    - @emojos.each do |emojo|
+      %tr
+        %td
+          %img.emojione.custom-emoji{ src: full_asset_url(emojo.image.url), alt: ":#{emojo.shortcode}:" }
+        %td=":#{emojo.shortcode}:"
