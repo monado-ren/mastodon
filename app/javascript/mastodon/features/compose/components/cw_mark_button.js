@@ -39,7 +39,7 @@ class CwMarkIconButton extends React.PureComponent {
     return (
       <div className='compose-form__poll-button'>
       <IconButton
-        icon='theater-masks'
+        icon='low-vision'
         title={intl.formatMessage(active ? messages.marked : messages.unmarked)}
         disabled={disabled}
         onClick={this.handleClick}
