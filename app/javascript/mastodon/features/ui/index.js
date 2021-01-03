@@ -542,7 +542,7 @@ class UI extends React.PureComponent {
             {children}
           </SwitchingColumnsArea>
 
-          {layout !== 'mobile' && <PictureInPicture />}
+          <PictureInPicture />
           <NotificationsContainer />
           <LoadingBarContainer className='loading-bar' />
           <ModalContainer />
