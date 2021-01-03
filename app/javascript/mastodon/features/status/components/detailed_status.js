@@ -62,6 +62,8 @@ class DetailedStatus extends ImmutablePureComponent {
     quote_muted: PropTypes.bool,
     onOpenMedia: PropTypes.func.isRequired,
     onOpenVideo: PropTypes.func.isRequired,
+    onOpenMediaQuote: PropTypes.func.isRequired,
+    onOpenVideoQuote: PropTypes.func.isRequired,
     onToggleHidden: PropTypes.func.isRequired,
     measureHeight: PropTypes.bool,
     onHeightChange: PropTypes.func,
@@ -102,6 +104,10 @@ class DetailedStatus extends ImmutablePureComponent {
 
   handleOpenVideo = (options) => {
     this.props.onOpenVideo(this.props.status.getIn(['media_attachments', 0]), options);
+  }
+
+  handleOpenVideoQuote = (options) => {
+    this.props.onOpenVideoQuote(this.props.status.getIn(['quote', 'media_attachments', 0]), options);
   }
 
   handleExpandedToggle = () => {
@@ -209,7 +215,7 @@ class DetailedStatus extends ImmutablePureComponent {
               width={300}
               height={150}
               inline
-              onOpenVideo={this.handleOpenVideo}
+              onOpenVideo={this.handleOpenVideoQuote}
               sensitive={quote_status.get('sensitive')}
               visible={this.props.showQuoteMedia}
               onToggleVisibility={this.props.onToggleQuoteMediaVisibility}
@@ -223,7 +229,7 @@ class DetailedStatus extends ImmutablePureComponent {
               sensitive={quote_status.get('sensitive')}
               media={quote_status.get('media_attachments')}
               height={300}
-              onOpenMedia={this.props.onOpenMedia}
+              onOpenMedia={this.props.onOpenMediaQuote}
               visible={this.props.showQuoteMedia}
               onToggleVisibility={this.props.onToggleQuoteMediaVisibility}
               quote
