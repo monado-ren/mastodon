@@ -124,7 +124,7 @@ export const makeGetStatus = () => {
 export const makeGetPictureInPicture = () => {
   return createSelector([
     (state, { id }) => state.get('picture_in_picture').statusId === id,
-    (state) => state.getIn(['meta', 'layout']) !== 'mobile',
+    (state) => true,
   ], (inUse, available) => ImmutableMap({
     inUse: inUse && available,
     available,
