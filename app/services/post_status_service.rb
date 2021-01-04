@@ -126,14 +126,14 @@ class PostStatusService < BaseService
 
   def process_remote_attachments
     image_array = @text.scan(/IMAGE:\s*\[\s*((?:https|http):\/\/.+?)\s*\](?:\s*\{\s*((?:https|http):\/\/.+?)\s*\})*/)
-    video_array = @text.scan(/VIDEO:\s*\[\s*((?:https|http):\/\/.+?)\s*\](?:\s*\{\s*((?:https|http):\/\/.+?)\s*\})*/)
+    video_audio_array = @text.scan(/(?:VIDEO|AUDIO):\s*\[\s*((?:https|http):\/\/.+?)\s*\](?:\s*\{\s*((?:https|http):\/\/.+?)\s*\})*/)
 
-    @text       = @text.gsub(/(?:IMAGE|VIDEO):\s*\[\s*((?:https|http):\/\/.+?)\s*\](?:\s*\{\s*((?:https|http):\/\/.+?)\s*\})*/, '')
-    return [] if image_array.blank? && video_array.blank?
+    @text       = @text.gsub(/(?:IMAGE|VIDEO|AUDIO):\s*\[\s*((?:https|http):\/\/.+?)\s*\](?:\s*\{\s*((?:https|http):\/\/.+?)\s*\})*/, '')
+    return [] if image_array.blank? && video_audio_array.blank?
 
     media_attachments = []
-    media_array = if !video_array.empty?
-                    [video_array.first]
+    media_array = if !video_audio_array.empty?
+                    [video_audio_array.first]
                   else
                     image_array
                   end
