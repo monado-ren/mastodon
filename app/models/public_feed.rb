@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PublicFeed < Feed
+class PublicFeed
   # @param [Account] account
   # @param [Hash] options
   # @option [Boolean] :with_replies
@@ -26,7 +26,11 @@ class PublicFeed < Feed
     scope.merge!(local_only_scope) if local_only?
     scope.merge!(without_bots_scope) if local_only?
     scope.merge!(remote_only_scope) if remote_only?
-    scope.merge!(account_filters_scope) if account?
+    if account?
+      scope.merge!(account_filters_scope)
+    else
+      scope.merge!(instance_only_statuses_scope)
+    end
     scope.merge!(media_only_scope) if media_only?
 
     scope.cache_ids.to_a_paginated_by_id(limit, max_id: max_id, since_id: since_id, min_id: min_id)
@@ -34,28 +38,30 @@ class PublicFeed < Feed
 
   private
 
+  attr_reader :account, :options
+
   def with_reblogs?
-    @options[:with_reblogs]
+    options[:with_reblogs]
   end
 
   def with_replies?
-    @options[:with_replies]
+    options[:with_replies]
   end
 
   def local_only?
-    @options[:local]
+    options[:local]
   end
 
   def remote_only?
-    @options[:remote]
+    options[:remote]
   end
 
   def account?
-    @account.present?
+    account.present?
   end
 
   def media_only?
-    @options[:only_media]
+    options[:only_media]
   end
 
   def public_scope
@@ -86,10 +92,14 @@ class PublicFeed < Feed
     Status.joins(:media_attachments).group(:id)
   end
 
+  def instance_only_statuses_scope
+    Status.where(local_only: [false, nil])
+  end
+
   def account_filters_scope
-    Status.not_excluded_by_account(@account).tap do |scope|
-      scope.merge!(Status.not_domain_blocked_by_account(@account)) unless local_only?
-      scope.merge!(Status.in_chosen_languages(@account)) if @account.chosen_languages.present?
+    Status.not_excluded_by_account(account).tap do |scope|
+      scope.merge!(Status.not_domain_blocked_by_account(account)) unless local_only?
+      scope.merge!(Status.in_chosen_languages(account)) if account.chosen_languages.present?
     end
   end
 end
