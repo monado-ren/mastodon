@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs tootctl-media-remove-orphans.service
+
+[Timer]
+OnCalendar=*-*-01 03:30:00
+
+[Install]
+WantedBy=multi-user.target

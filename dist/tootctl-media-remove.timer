@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs tootctl-media-remove.service
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+
+[Install]
+WantedBy=multi-user.target

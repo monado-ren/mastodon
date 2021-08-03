@@ -16,7 +16,7 @@ $red-bookmark: $warning-red;
 // Values from the classic Mastodon UI
 $classic-base-color: #323232; // Midnight Express
 $classic-primary-color: #9baec8; // Echo Blue
-$classic-secondary-color: #d9e1e8; // Pattens Blue
+$classic-secondary-color: #ebebeb; // Pattens Blue
 $classic-highlight-color: $blue; // Summer Sky
 
 // Variables for defaults in UI
@@ -41,7 +41,7 @@ $ui-highlight-color: $classic-highlight-color !default;
 $primary-text-color: $white !default;
 $darker-text-color: $ui-primary-color !default;
 $dark-text-color: $ui-base-lighter-color !default;
-$secondary-text-color: $ui-secondary-color !default;
+$secondary-text-color: #d9e1e8;
 $highlight-text-color: $ui-highlight-color !default;
 $action-button-color: $ui-base-lighter-color !default;
 // For texts on inverted backgrounds

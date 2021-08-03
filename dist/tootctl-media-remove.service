@@ -1,0 +1,10 @@
+[Unit]
+Description=Removes remote media
+
+[Service]
+Type=simple
+User=mastodon
+WorkingDirectory=/home/mastodon/live
+Environment="RAILS_ENV=production"
+ExecStart=/home/mastodon/live/bin/tootctl media remove
+TimeoutSec=15
