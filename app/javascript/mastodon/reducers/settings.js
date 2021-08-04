@@ -19,6 +19,7 @@ const initialState = ImmutableMap({
 
   home: ImmutableMap({
     shows: ImmutableMap({
+      bots: true,
       reblog: true,
       reply: true,
     }),
@@ -82,6 +83,9 @@ const initialState = ImmutableMap({
   }),
 
   public: ImmutableMap({
+    shows: ImmutableMap({
+      bots: true,
+    }),
     regex: ImmutableMap({
       body: '',
     }),
