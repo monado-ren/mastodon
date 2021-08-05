@@ -787,7 +787,7 @@ zh-CN:
       title: 初始设置
     status:
       account_status: 帐户状态
-      confirming: 等待电子邮件确认完成。
+      confirming: 你的账号还不能正常使用，请先确认电子邮件。
       functional: 你的帐号可以正常使用了。
       pending: 工作人员正在审核你的申请。这需要花点时间。在申请被批准后，你将收到一封电子邮件。
       redirecting_to: 你的帐户无效，因为它已被设置为跳转到 %{acct}
@@ -983,7 +983,7 @@ zh-CN:
     max_uses:
       other: "%{count} 次"
     max_uses_prompt: 无限制
-    prompt: 生成分享链接，邀请别人在本服务器注册
+    prompt: 生成分享链接，邀请别人在本服务器注册。请尽量避免生成无限次数邀请。
     table:
       expires_at: 失效时间
       uses: 已使用次数
@@ -995,7 +995,7 @@ zh-CN:
     validations:
       images_and_video: 无法在嘟文中同时插入视频和图片
       not_ready: 不能附加还在处理中的文件。请稍后再试！
-      too_many: 最多只能添加 4 张图片
+      too_many: 最多只能添加 9 张图片
   migrations:
     acct: 新帐户的 用户名@域名
     cancel: 取消跳转
