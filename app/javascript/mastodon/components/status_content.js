@@ -28,7 +28,6 @@ export default class StatusContent extends React.PureComponent {
     onClick: PropTypes.func,
     collapsable: PropTypes.bool,
     onCollapsedToggle: PropTypes.func,
-    quote: PropTypes.bool,
   };
 
   state = {
@@ -133,15 +132,6 @@ export default class StatusContent extends React.PureComponent {
     }
   }
 
-  onQuoteClick = (statusId, e) => {
-    let statusUrl = `/statuses/${statusId}`;
-
-    if (this.context.router && e.button === 0) {
-      e.preventDefault();
-      this.context.router.history.push(statusUrl);
-    }
-  }
-
   handleMouseDown = (e) => {
     this.startXY = [e.clientX, e.clientY];
   }
@@ -226,12 +216,11 @@ handleTranslationClick = (e) => {
   }
 
   render () {
-    const { status, quote } = this.props;
+    const { status } = this.props;
 
     const hidden = this.props.onExpandedToggle ? !this.props.expanded : this.state.hidden;
     const renderReadMore = this.props.onClick && status.get('collapsed');
     const renderViewThread = this.props.showThread && status.get('in_reply_to_id') && status.get('in_reply_to_account_id') === status.getIn(['account', 'id']);
-    const renderShowPoll = !!status.get('poll');
 
     const htmlContent = htmlPare(status.get('contentHtml'));
     htmlContent.querySelectorAll('.hashtag').forEach((e)=>{
@@ -268,14 +257,47 @@ handleTranslationClick = (e) => {
       </button>
     );
 
-    const showPollButton = (
-      <button className='status__content__read-more-button' onClick={this.props.onClick} key='show-poll'>
-        <FormattedMessage id='status.show_poll' defaultMessage='Show poll' /><Icon id='angle-right' fixedWidth />
-      </button>
-    );
+	const translationContainer = (
+	getLocale().localeData[0].locale !== status.get('language') ? 
+      <React.Fragment>
+        <button
+          tabIndex='-1' className={'status__content__show-translation-button'}
+          onClick={this.handleTranslationClick.bind(this)}
+        >{toggleTranslation} <Icon id='language ' fixedWidth /></button>
 
-    const pollContainer = (
-      <PollContainer pollId={status.get('poll')} />
+        {/* error message */}
+        <div className='translation-content__wrapper'>
+          <section
+            className={`translation-content__failed ${this.state.translationStatus === 'failed' ? 'display' : 'hidden'}`}
+          >
+            <p><FormattedMessage id='status.translation_failed' defaultMessage='Fetch translation failed' /></p>
+          </section>
+          <section
+            className={`translation-content__loading ${this.state.translationStatus === 'fetching' ? 'display' : 'hidden'}`}
+          >
+            <div className='spinner'>
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+            {/* <p>Fetching translation, please wait</p> */}
+          </section>
+          <section
+            className={`translation-content__succeed ${this.state.translationStatus === 'succeed' && !this.state.hideTranslation ? 'display' : 'hidden'}`}
+          >
+            <p className='translation-content__powered-by'>
+              <FormattedMessage
+                id='status.translation_by' defaultMessage='Translation powered by {google}'
+                values={{
+                  google: <img alt='Google' draggable='false' src={googleLogo} />,
+                }}
+              />
+            </p>
+            <p className='translation-content'>{this.state.translation}</p>
+          </section>
+        </div>
+      </React.Fragment> : null
     );
 
     if (status.get('spoiler_text').length > 0) {
@@ -305,7 +327,11 @@ handleTranslationClick = (e) => {
 
           <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''} translate`} dangerouslySetInnerHTML={content} />
 
-          {!hidden && renderShowPoll && quote ? showPollButton : pollContainer}
+
+          {!hidden ? translationContainer : null}
+
+
+          {!hidden && !!status.get('poll') && <PollContainer pollId={status.get('poll')} />}
 
           {renderViewThread && showThreadButton}
         </div>
@@ -315,7 +341,7 @@ handleTranslationClick = (e) => {
         <div className={classNames} ref={this.setRef} tabIndex='0' onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} key='status-content' onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <div className='status__content__text status__content__text--visible translate' dangerouslySetInnerHTML={content} />
 
-          {renderShowPoll && quote ? showPollButton : pollContainer}
+          {!!status.get('poll') && <PollContainer pollId={status.get('poll')} />}
 
           {renderViewThread && showThreadButton}
         </div>,
@@ -331,7 +357,9 @@ handleTranslationClick = (e) => {
         <div className={classNames} ref={this.setRef} tabIndex='0' onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <div className='status__content__text status__content__text--visible translate' dangerouslySetInnerHTML={content} />
 
-          {renderShowPoll && quote ? showPollButton : pollContainer}
+		 {translationContainer}
+
+          {!!status.get('poll') && <PollContainer pollId={status.get('poll')} />}
 
           {renderViewThread && showThreadButton}
         </div>
