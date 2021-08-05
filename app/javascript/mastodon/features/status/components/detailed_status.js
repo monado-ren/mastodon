@@ -88,7 +88,8 @@ class DetailedStatus extends ImmutablePureComponent {
     if (e.button === 0 && !(e.ctrlKey || e.metaKey) && this.context.router) {
       const id = e.currentTarget.getAttribute('data-id');
       e.preventDefault();
-      this.context.router.history.push(`/accounts/${id}`);
+      this.context.router.history.push(`/accounts/${this.props.status.getIn(['account', 'id'])}`);
+      //this.context.router.history.push(`/accounts/${id}`);
     }
 
     e.stopPropagation();
