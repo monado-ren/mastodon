@@ -70,9 +70,6 @@ const initialState = ImmutableMap({
   }),
 
   community: ImmutableMap({
-    shows: ImmutableMap({
-      bots: true,
-    }),
     regex: ImmutableMap({
       body: '',
     }),
