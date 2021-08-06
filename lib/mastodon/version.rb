@@ -21,7 +21,7 @@ module Mastodon
     end
 
     def suffix
-      '嗼!'
+      ''
     end
 
     def to_a
