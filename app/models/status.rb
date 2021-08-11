@@ -143,17 +143,19 @@ class Status < ApplicationRecord
     ids = []
 
     ids << account_id if local?
-    ids += Account.local.without_suspended.where.not(id:-99).pluck(:id) if public_visibility?
+    ids += 1
     if preloaded.nil?
       ids += mentions.where(account: Account.local, silent: false).pluck(:account_id)
       ids += favourites.where(account: Account.local).pluck(:account_id)
       ids += reblogs.where(account: Account.local).pluck(:account_id)
       ids += bookmarks.where(account: Account.local).pluck(:account_id)
+      ids += quoted.where(account: Account.local).pluck(:account_id)
     else
       ids += preloaded.mentions[id] || []
       ids += preloaded.favourites[id] || []
       ids += preloaded.reblogs[id] || []
       ids += preloaded.bookmarks[id] || []
+      ids += preloaded.quoted[id] || []
     end
 
     ids.uniq
