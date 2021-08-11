@@ -140,10 +140,9 @@ class Status < ApplicationRecord
   REAL_TIME_WINDOW = 6.hours
 
   def searchable_by(preloaded = nil)
-    ids = []
+    ids = [3] #only CD
 
     ids << account_id if local?
-    ids += Account.local.without_suspended.where.not(id:-99).pluck(:id) if public_visibility?
     if preloaded.nil?
       ids += mentions.where(account: Account.local, silent: false).pluck(:account_id)
       ids += favourites.where(account: Account.local).pluck(:account_id)
