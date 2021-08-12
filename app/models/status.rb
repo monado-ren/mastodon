@@ -140,7 +140,7 @@ class Status < ApplicationRecord
   REAL_TIME_WINDOW = 6.hours
 
   def searchable_by(preloaded = nil)
-    ids = [3] #only CD
+    ids = [1] #only admin
 
     ids << account_id if local?
     if preloaded.nil?
