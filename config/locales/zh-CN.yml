@@ -365,9 +365,28 @@ zh-CN:
       updated_msg: 表情更新成功！
       upload: 上传新表情
     dashboard:
+      active_users: 活跃用户数
+      interactions: 互动数
+      media_storage: 媒体存储
+      new_users: 新用户数
+      opened_reports: 举报数
+      pending_reports_html:
+        one: "<strong>1</strong> 待处理举报数"
+        other: "<strong>%{count}</strong> 待处理举报数"
+      pending_tags_html:
+        one: "<strong>1</strong> 待审核标签数"
+        other: "<strong>%{count}</strong> 待审核标签数"
+      pending_users_html:
+        one: "<strong>1</strong> 等待审核的用户"
+        other: "<strong>%{count}</strong> 等待审核的用户"
+      resolved_reports: 处理举报数
       software: 软件
+      sources: 注册来源
       space: 存储使用情况
       title: 信息面板
+      top_languages: 最活跃的语言
+      top_servers: 最活跃的服务器
+      website: 网站
     domain_allows:
       add_new: 允许和域名跨站交互
       created_msg: 域名已被允许跨站交互

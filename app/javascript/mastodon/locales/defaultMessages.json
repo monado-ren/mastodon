@@ -492,6 +492,10 @@
         "id": "status.cancel_reblog_private"
       },
       {
+        "defaultMessage": "This post cannot be quoted",
+        "id": "status.cannot_quote"
+      },
+      {
         "defaultMessage": "This post cannot be boosted",
         "id": "status.cannot_reblog"
       },
@@ -502,14 +506,6 @@
       {
         "defaultMessage": "Quote",
         "id": "status.quote"
-      },
-      {
-        "defaultMessage": "Unlisted quote",
-        "id": "status.unlisted_quote"
-      },
-      {
-        "defaultMessage": "Muted quote",
-        "id": "status.muted_quote"
       },
       {
         "defaultMessage": "Favourite",
@@ -589,24 +585,12 @@
         "id": "status.show_thread"
       },
       {
-        "defaultMessage": "Hide translation",
-        "id": "status.hide_translation"
-      },
-      {
-        "defaultMessage": "Hide translation",
-        "id": "status.show_translation"
-      },
-      {
         "defaultMessage": "Read more",
         "id": "status.read_more"
       },
       {
-        "defaultMessage": "Fetch translation failed",
-        "id": "status.translation_failed"
-      },
-      {
-        "defaultMessage": "Translation powered by {google}",
-        "id": "status.translation_by"
+        "defaultMessage": "Show poll",
+        "id": "status.show_poll"
       },
       {
         "defaultMessage": "Show more",
@@ -648,6 +632,14 @@
       {
         "defaultMessage": "{name} boosted",
         "id": "status.reblogged_by"
+      },
+      {
+        "defaultMessage": "Muted quote",
+        "id": "status.muted_quote"
+      },
+      {
+        "defaultMessage": "Unlisted quote",
+        "id": "status.unlisted_quote"
       }
     ],
     "path": "app/javascript/mastodon/components/status.json"
@@ -716,6 +708,14 @@
       {
         "defaultMessage": "Replying now will overwrite the message you are currently composing. Are you sure you want to proceed?",
         "id": "confirmations.reply.message"
+      },
+      {
+        "defaultMessage": "Quote",
+        "id": "confirmations.quote.confirm"
+      },
+      {
+        "defaultMessage": "Quoting now will overwrite the message you are currently composing. Are you sure you want to proceed?",
+        "id": "confirmations.quote.message"
       },
       {
         "defaultMessage": "Hide entire domain",
@@ -1051,6 +1051,10 @@
       {
         "defaultMessage": "Media only",
         "id": "community.column_settings.media_only"
+      },
+      {
+        "defaultMessage": "Show toots from bots",
+        "id": "community.column_settings.show_bot_statuses"
       }
     ],
     "path": "app/javascript/mastodon/features/community_timeline/components/column_settings.json"
@@ -1141,6 +1145,19 @@
       }
     ],
     "path": "app/javascript/mastodon/features/compose/components/compose_form.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Text is hidden behind warning",
+        "id": "compose_form.spoiler.marked"
+      },
+      {
+        "defaultMessage": "Text is not hidden",
+        "id": "compose_form.spoiler.unmarked"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/compose/components/cw_mark_button.json"
   },
   {
     "descriptors": [
@@ -2020,6 +2037,10 @@
       {
         "defaultMessage": "Show replies",
         "id": "home.column_settings.show_replies"
+      },
+      {
+        "defaultMessage": "Show toots from bots",
+        "id": "home.column_settings.show_bot_statuses"
       }
     ],
     "path": "app/javascript/mastodon/features/home_timeline/components/column_settings.json"
@@ -2048,6 +2069,79 @@
       }
     ],
     "path": "app/javascript/mastodon/features/home_timeline/index.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "First steps",
+        "id": "introduction.welcome.headline"
+      },
+      {
+        "defaultMessage": "Welcome to the fediverse! In a few moments, you'll be able to broadcast messages and talk to your friends across a wide variety of servers. But this server, {domain}, is special—it hosts your profile, so remember its name.",
+        "id": "introduction.welcome.text"
+      },
+      {
+        "defaultMessage": "Let's go!",
+        "id": "introduction.welcome.action"
+      },
+      {
+        "defaultMessage": "Home",
+        "id": "introduction.federation.home.headline"
+      },
+      {
+        "defaultMessage": "Posts from people you follow will appear in your home feed. You can follow anyone on any server!",
+        "id": "introduction.federation.home.text"
+      },
+      {
+        "defaultMessage": "Local",
+        "id": "introduction.federation.local.headline"
+      },
+      {
+        "defaultMessage": "Public posts from people on the same server as you will appear in the local timeline.",
+        "id": "introduction.federation.local.text"
+      },
+      {
+        "defaultMessage": "Federated",
+        "id": "introduction.federation.federated.headline"
+      },
+      {
+        "defaultMessage": "Public posts from other servers of the fediverse will appear in the federated timeline.",
+        "id": "introduction.federation.federated.text"
+      },
+      {
+        "defaultMessage": "Next",
+        "id": "introduction.federation.action"
+      },
+      {
+        "defaultMessage": "Reply",
+        "id": "introduction.interactions.reply.headline"
+      },
+      {
+        "defaultMessage": "You can reply to other people's and your own toots, which will chain them together in a conversation.",
+        "id": "introduction.interactions.reply.text"
+      },
+      {
+        "defaultMessage": "Boost",
+        "id": "introduction.interactions.reblog.headline"
+      },
+      {
+        "defaultMessage": "You can share other people's toots with your followers by boosting them.",
+        "id": "introduction.interactions.reblog.text"
+      },
+      {
+        "defaultMessage": "Favourite",
+        "id": "introduction.interactions.favourite.headline"
+      },
+      {
+        "defaultMessage": "You can save a toot for later, and let the author know that you liked it, by favouriting it.",
+        "id": "introduction.interactions.favourite.text"
+      },
+      {
+        "defaultMessage": "Finish toot-orial!",
+        "id": "introduction.interactions.action"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/introduction/index.json"
   },
   {
     "descriptors": [
@@ -2574,6 +2668,14 @@
         "id": "status.cannot_reblog"
       },
       {
+        "defaultMessage": "This post cannot be quoted",
+        "id": "status.cannot_quote"
+      },
+      {
+        "defaultMessage": "Quote",
+        "id": "status.quote"
+      },
+      {
         "defaultMessage": "Favourite",
         "id": "status.favourite"
       },
@@ -2584,6 +2686,14 @@
       {
         "defaultMessage": "Replying now will overwrite the message you are currently composing. Are you sure you want to proceed?",
         "id": "confirmations.reply.message"
+      },
+      {
+        "defaultMessage": "Quote",
+        "id": "confirmations.quote.confirm"
+      },
+      {
+        "defaultMessage": "Quoting now will overwrite the message you are currently composing. Are you sure you want to proceed?",
+        "id": "confirmations.quote.message"
       },
       {
         "defaultMessage": "Expand this status",
@@ -2619,6 +2729,10 @@
       {
         "defaultMessage": "Remote only",
         "id": "community.column_settings.remote_only"
+      },
+      {
+        "defaultMessage": "Show toots from bots",
+        "id": "community.column_settings.show_bot_statuses"
       }
     ],
     "path": "app/javascript/mastodon/features/public_timeline/components/column_settings.json"
@@ -2684,8 +2798,16 @@
         "id": "status.cancel_reblog_private"
       },
       {
+        "defaultMessage": "This post cannot be quoted",
+        "id": "status.cannot_quote"
+      },
+      {
         "defaultMessage": "This post cannot be boosted",
         "id": "status.cannot_reblog"
+      },
+      {
+        "defaultMessage": "Quote",
+        "id": "status.quote"
       },
       {
         "defaultMessage": "Favourite",
@@ -2796,6 +2918,10 @@
       {
         "defaultMessage": "This post is only visible by other users of your instance",
         "id": "status.local_only"
+      },
+      {
+        "defaultMessage": "Muted quote",
+        "id": "status.muted_quote"
       }
     ],
     "path": "app/javascript/mastodon/features/status/components/detailed_status.json"
@@ -2868,6 +2994,14 @@
         "id": "confirmations.reply.message"
       },
       {
+        "defaultMessage": "Quote",
+        "id": "confirmations.quote.confirm"
+      },
+      {
+        "defaultMessage": "Quoting now will overwrite the message you are currently composing. Are you sure you want to proceed?",
+        "id": "confirmations.quote.message"
+      },
+      {
         "defaultMessage": "Hide entire domain",
         "id": "confirmations.domain_block.confirm"
       },
@@ -2877,6 +3011,15 @@
       }
     ],
     "path": "app/javascript/mastodon/features/status/index.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "View context",
+        "id": "lightbox.view_context"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/ui/components/audio_modal.json"
   },
   {
     "descriptors": [
@@ -3317,6 +3460,15 @@
       }
     ],
     "path": "app/javascript/mastodon/features/ui/components/upload_area.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "View context",
+        "id": "lightbox.view_context"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/ui/components/video_modal.json"
   },
   {
     "descriptors": [
