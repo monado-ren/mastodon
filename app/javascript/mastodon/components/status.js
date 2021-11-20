@@ -202,6 +202,29 @@ class Status extends ImmutablePureComponent {
     this.handleHotkeyOpenProfile();
   }
 
+  handleQuoteAccountClick = e => {
+    if (e && (e.button !== 0 || e.ctrlKey || e.metaKey))  {
+      return;
+    }
+
+    if (e) {
+      e.preventDefault();
+    }
+
+    this.handleQuoteOpenProfile();
+  }
+ 
+  handleQuoteOpenProfile = () => {
+    const { router } = this.context;
+    const status = this._properStatus();
+
+    if (!router) {
+      return;
+    }
+
+    router.history.push(`/@${status.get('quote').getIn(['account', 'acct'])}`);
+  }
+
   handleExpandedToggle = () => {
     this.props.onToggleHidden(this._properStatus());
   }
@@ -637,7 +660,7 @@ class Status extends ImmutablePureComponent {
         quote = (
           <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { muted: this.props.muted })} data-id={quote_status.get('id')}>
             <div className='status__info'>
-              <a onClick={this.handleAccountClick} target='_blank' data-id={quote_status.getIn(['account', 'id'])} href={quote_status.getIn(['account', 'url'])} title={quote_status.getIn(['account', 'acct'])} className='status__display-name'>
+              <a onClick={this.handleQuoteAccountClick} target='_blank' data-id={quote_status.getIn(['account', 'id'])} href={quote_status.getIn(['account', 'url'])} title={quote_status.getIn(['account', 'acct'])} className='status__display-name'>
                 <div className='status__avatar'><Avatar account={quote_status.get('account')} size={18} /></div>
                 <DisplayName account={quote_status.get('account')} />
               </a>
