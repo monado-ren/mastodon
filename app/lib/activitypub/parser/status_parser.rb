@@ -29,7 +29,7 @@ class ActivityPub::Parser::StatusParser
   end
 
   def text
-    if @object['quoteUrl'].blank? && @object['_misskey_quote'].present?
+    if @object['quoteUri'].blank? && @object['_misskey_quote'].present?
       Formatter.instance.linkify(@object['_misskey_content'])
     elsif @object['content'].present?
       @object['content']

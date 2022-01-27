@@ -430,7 +430,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
   end
 
   def quote
-    @quote ||= quote_from_url(@object['quoteUrl'] || @object['_misskey_quote'])
+    @quote ||= quote_from_url(@object['quoteUri'] || @object['_misskey_quote'])
   end
 
   def process_quote

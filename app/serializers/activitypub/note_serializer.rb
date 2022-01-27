@@ -3,7 +3,7 @@
 class ActivityPub::NoteSerializer < ActivityPub::Serializer
   include FormattingHelper
 
-  context_extensions :atom_uri, :conversation, :sensitive, :voters_count
+  context_extensions :atom_uri, :conversation, :sensitive, :voters_count, :quote_uri
 
   attributes :id, :type, :summary,
              :in_reply_to, :published, :url,
@@ -11,7 +11,7 @@ class ActivityPub::NoteSerializer < ActivityPub::Serializer
              :atom_uri, :in_reply_to_atom_uri,
              :conversation
 
-  attribute :quote_url, if: -> { object.quote? }
+  attribute :quote_uri, if: -> { object.quote? }
   attribute :misskey_quote, key: :_misskey_quote, if: -> { object.quote? }
   attribute :misskey_content, key: :_misskey_content, if: -> { object.quote? }
   attribute :content
@@ -141,11 +141,11 @@ class ActivityPub::NoteSerializer < ActivityPub::Serializer
     end
   end
 
-  def quote_url
+  def quote_uri
     ActivityPub::TagManager.instance.uri_for(object.quote) if object.quote?
   end
 
-  alias misskey_quote quote_url
+  alias misskey_quote quote_uri
 
   def misskey_content
     object.text if object.quote?
