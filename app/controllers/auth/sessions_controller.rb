@@ -23,11 +23,8 @@ class Auth::SessionsController < Devise::SessionsController
 
   def create
     super do |resource|
-      # We only need to call this if this hasn't already been
-      # called from one of the two-factor or sign-in token
-      # authentication methods
-
-      on_authentication_success(resource, :password) unless @on_authentication_success_called
+      resource.update_sign_in!(request, new_sign_in: true)
+      flash.delete(:notice)
     end
   end
 

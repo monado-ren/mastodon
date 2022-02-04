@@ -33,7 +33,8 @@ module SignInTokenAuthenticationConcern
 
   def authenticate_with_sign_in_token_attempt(user)
     if valid_sign_in_token_attempt?(user)
-      on_authentication_success(user, :sign_in_token)
+      clear_attempt_from_session
+      sign_in(user)
     else
       on_authentication_failure(user, :sign_in_token, :invalid_sign_in_token)
       flash.now[:alert] = I18n.t('users.invalid_sign_in_token')
