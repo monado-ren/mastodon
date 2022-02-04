@@ -56,9 +56,8 @@ module TwoFactorAuthenticationConcern
     webauthn_credential = WebAuthn::Credential.from_get(user_params[:credential])
 
     if valid_webauthn_credential?(user, webauthn_credential)
-      clear_attempt_from_session
-      sign_in(user)
-      render json: { redirect_path: root_path }, status: :ok
+      on_authentication_success(user, :webauthn)
+      render json: { redirect_path: after_sign_in_path_for(user) }, status: :ok
     else
       on_authentication_failure(user, :webauthn, :invalid_credential)
       render json: { error: t('webauthn_credentials.invalid_credential') }, status: :unprocessable_entity

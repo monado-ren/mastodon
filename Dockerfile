@@ -5,7 +5,11 @@ SHELL ["/bin/bash", "-c"]
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # Install Node v16 (LTS)
+<<<<<<< HEAD
 ENV NODE_VER="16.13.0"
+=======
+ENV NODE_VER="16.13.2"
+>>>>>>> 50ab3f3dcb6b00109fa1462a5ca0228563abb99b
 RUN ARCH= && \
     dpkgArch="$(dpkg --print-architecture)" && \
   case "${dpkgArch##*-}" in \
@@ -27,7 +31,11 @@ RUN ARCH= && \
 	mv node-v$NODE_VER-linux-$ARCH /opt/node
 
 # Install Ruby 3.0
+<<<<<<< HEAD
 ENV RUBY_VER="3.0.2"
+=======
+ENV RUBY_VER="3.0.3"
+>>>>>>> 50ab3f3dcb6b00109fa1462a5ca0228563abb99b
 RUN apt-get update && \
   apt-get install -y --no-install-recommends build-essential \
     bison libyaml-dev libgdbm-dev libreadline-dev libjemalloc-dev \
@@ -58,6 +66,10 @@ COPY Gemfile* package.json yarn.lock /opt/mastodon/
 RUN cd /opt/mastodon && \
   bundle config set --local deployment 'true' && \
   bundle config set --local without 'development test' && \
+<<<<<<< HEAD
+=======
+  bundle config set silence_root_warning true && \
+>>>>>>> 50ab3f3dcb6b00109fa1462a5ca0228563abb99b
 	bundle install -j"$(nproc)" && \
 	yarn install --pure-lockfile
 

@@ -13,14 +13,6 @@ class Auth::SessionsController < Devise::SessionsController
   before_action :set_instance_presenter, only: [:new]
   before_action :set_body_classes
 
-  def new
-    Devise.omniauth_configs.each do |provider, config|
-      return redirect_to(omniauth_authorize_path(resource_name, provider)) if config.strategy.redirect_at_sign_in
-    end
-
-    super
-  end
-
   def create
     super do |resource|
       resource.update_sign_in!(request, new_sign_in: true)
@@ -84,14 +76,6 @@ class Auth::SessionsController < Devise::SessionsController
     end
   end
 
-  def after_sign_out_path_for(_resource_or_scope)
-    Devise.omniauth_configs.each_value do |config|
-      return root_path if config.strategy.redirect_at_sign_in
-    end
-
-    super
-  end
-
   def require_no_authentication
     super
 
@@ -144,7 +128,7 @@ class Auth::SessionsController < Devise::SessionsController
 
     clear_attempt_from_session
 
-    user.update_sign_in!(request, new_sign_in: true)
+    user.update_sign_in!(new_sign_in: true)
     sign_in(user)
     flash.delete(:notice)
 

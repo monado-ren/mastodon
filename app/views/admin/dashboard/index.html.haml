@@ -17,47 +17,9 @@
         - if message.action
           = link_to t("admin.system_checks.#{message.key}.action"), message.action
 
-.dashboard__counters
-  %div
-    = link_to admin_accounts_url(local: 1, recent: 1) do
-      .dashboard__counters__num{ title: number_with_delimiter(@users_count, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @users_count
-      .dashboard__counters__label= t 'admin.dashboard.total_users'
-  %div
-    %div
-      .dashboard__counters__num{ title: number_with_delimiter(@registrations_week, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @registrations_week
-      .dashboard__counters__label= t 'admin.dashboard.week_users_new'
-  %div
-    %div
-      .dashboard__counters__num{ title: number_with_delimiter(@logins_week, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @logins_week
-      .dashboard__counters__label= t 'admin.dashboard.week_users_active'
-  %div
-    = link_to admin_pending_accounts_path do
-      .dashboard__counters__num{ title: number_with_delimiter(@pending_users_count, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @pending_users_count
-      .dashboard__counters__label= t 'admin.dashboard.pending_users'
-  %div
-    = link_to admin_reports_url do
-      .dashboard__counters__num{ title: number_with_delimiter(@reports_count, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @reports_count
-      .dashboard__counters__label= t 'admin.dashboard.open_reports'
-  %div
-    = link_to admin_tags_path(pending_review: '1') do
-      .dashboard__counters__num{ title: number_with_delimiter(@pending_tags_count, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @pending_tags_count
-      .dashboard__counters__label= t 'admin.dashboard.pending_tags'
-  %div
-    %div
-      .dashboard__counters__num{ title: number_with_delimiter(@interactions_week, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @interactions_week
-      .dashboard__counters__label= t 'admin.dashboard.week_interactions'
-  %div
-    = link_to sidekiq_url do
-      .dashboard__counters__num{ title: number_with_delimiter(@queue_backlog, strip_insignificant_zeros: true) }
-        = friendly_number_to_human @queue_backlog
-      .dashboard__counters__label= t 'admin.dashboard.backlog'
+.dashboard
+  .dashboard__item
+    = react_admin_component :counter, measure: 'new_users', start_at: @time_period.first, end_at: @time_period.last, label: t('admin.dashboard.new_users'), href: admin_accounts_path
 
   .dashboard__item
     = react_admin_component :counter, measure: 'active_users', start_at: @time_period.first, end_at: @time_period.last, label: t('admin.dashboard.active_users'), href: admin_accounts_path
@@ -76,11 +38,11 @@
       %span= t('admin.dashboard.pending_reports_html', count: @pending_reports_count)
       = fa_icon 'chevron-right fw'
 
-    = link_to admin_pending_accounts_path, class: 'dashboard__quick-access' do
+    = link_to admin_accounts_path(status: 'pending'), class: 'dashboard__quick-access' do
       %span= t('admin.dashboard.pending_users_html', count: @pending_users_count)
       = fa_icon 'chevron-right fw'
 
-    = link_to admin_tags_path(pending_review: '1'), class: 'dashboard__quick-access' do
+    = link_to admin_trends_tags_path(status: 'pending_review'), class: 'dashboard__quick-access' do
       %span= t('admin.dashboard.pending_tags_html', count: @pending_tags_count)
       = fa_icon 'chevron-right fw'
 
