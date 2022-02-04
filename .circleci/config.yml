@@ -122,8 +122,91 @@ jobs:
           command: ./bin/rails db:create
           name: Create database
       - run:
+          command: ./bin/rails db:migrate VERSION=20171010025614
+          name: Run migrations up to v2.0.0
+      - run:
+          command: ./bin/rails tests:migrations:populate_v2
+          name: Populate database with test data
+      - run:
           command: ./bin/rails db:migrate
-          name: Run migrations
+          name: Run all remaining migrations
+
+  test-two-step-migrations:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.7-buster-node
+        environment: *ruby_environment
+      - image: circleci/postgres:12.2
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_HOST_AUTH_METHOD: trust
+      - image: circleci/redis:5-alpine
+    steps:
+      - *attach_workspace
+      - *install_system_dependencies
+      - run:
+          command: ./bin/rails db:create
+          name: Create database
+      - run:
+          command: ./bin/rails db:migrate VERSION=20171010025614
+          name: Run migrations up to v2.0.0
+      - run:
+          command: ./bin/rails tests:migrations:populate_v2
+          name: Populate database with test data
+      - run:
+          command: ./bin/rails db:migrate
+          name: Run all pre-deployment migrations
+          evironment:
+            SKIP_POST_DEPLOYMENT_MIGRATIONS: true
+      - run:
+          command: ./bin/rails db:migrate
+          name: Run all post-deployment remaining migrations
+
+  test-ruby2.7:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.7-buster-node
+        environment: *ruby_environment
+      - image: circleci/postgres:12.2
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_HOST_AUTH_METHOD: trust
+      - image: circleci/redis:5-alpine
+    <<: *test_steps
+
+  test-ruby2.6:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:2.6-buster-node
+        environment: *ruby_environment
+      - image: circleci/postgres:12.2
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_HOST_AUTH_METHOD: trust
+      - image: circleci/redis:5-alpine
+    <<: *test_steps
+
+  test-ruby3.0:
+    <<: *defaults
+    docker:
+      - image: circleci/ruby:3.0-buster-node
+        environment: *ruby_environment
+      - image: circleci/postgres:12.2
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_HOST_AUTH_METHOD: trust
+      - image: circleci/redis:5-alpine
+    <<: *test_steps
+
+  test-webui:
+    <<: *defaults
+    docker:
+      - image: circleci/node:12-buster
+    steps:
+      - *attach_workspace
+      - run:
+          name: Run jest
+          command: yarn test:jest
 
 workflows:
   version: 2
@@ -141,6 +224,13 @@ workflows:
             - build
       - test-migrations:
           requires:
+            - install-ruby2.7
+      - test-two-step-migrations:
+          requires:
+            - install-ruby2.7
+      - test-ruby2.7:
+          requires:
+            - install-ruby2.7
             - build
       - node/run:
           cache-version: v1

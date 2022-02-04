@@ -553,8 +553,8 @@ GEM
     ruby-saml (1.13.0)
       nokogiri (>= 1.10.5)
       rexml
-    ruby2_keywords (0.0.5)
-    rufus-scheduler (3.7.0)
+    ruby2_keywords (0.0.4)
+    rufus-scheduler (3.6.0)
       fugit (~> 1.1, >= 1.1.6)
     safety_net_attestation (0.4.0)
       jwt (~> 2.0)
