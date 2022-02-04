@@ -88,7 +88,7 @@ const makeMapStateToProps = () => {
     ancestorsIds = ancestorsIds.withMutations(mutable => {
       let id = statusId;
 
-      while (id) {
+      while (id && !mutable.includes(id)) {
         mutable.unshift(id);
         id = inReplyTos.get(id);
       }
@@ -106,7 +106,7 @@ const makeMapStateToProps = () => {
     const ids = [statusId];
 
     while (ids.length > 0) {
-      let id        = ids.shift();
+      let id        = ids.pop();
       const replies = contextReplies.get(id);
 
       if (statusId !== id) {
@@ -115,7 +115,7 @@ const makeMapStateToProps = () => {
 
       if (replies) {
         replies.reverse().forEach(reply => {
-          ids.unshift(reply);
+          if (!ids.includes(reply) && !descendantsIds.includes(reply) && statusId !== reply) ids.push(reply);
         });
       }
     }
