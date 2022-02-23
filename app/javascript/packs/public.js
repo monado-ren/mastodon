@@ -310,7 +310,7 @@ function main() {
     if (window.location.hostname === url.split('/')[2].split(':')[0]) {
       window.location.href = url;
     } else {
-      window.open(url, 'blank');
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
     return false;
   });
