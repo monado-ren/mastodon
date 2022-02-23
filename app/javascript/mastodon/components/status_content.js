@@ -126,15 +126,6 @@ export default class StatusContent extends React.PureComponent {
     }
   }
 
-  onQuoteClick = (statusId, e) => {
-    let statusUrl = `/statuses/${statusId}`;
-
-    if (this.context.router && e.button === 0) {
-      e.preventDefault();
-      this.context.router.history.push(statusUrl);
-    }
-  }
-
   handleMouseDown = (e) => {
     this.startXY = [e.clientX, e.clientY];
   }
