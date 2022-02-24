@@ -69,7 +69,6 @@ const initialState = ImmutableMap({
   preselectDate: null,
   in_reply_to: null,
   quote_from: null,
-  quote_from_url: null,
   is_composing: false,
   is_submitting: false,
   is_changing_upload: false,
@@ -338,7 +337,6 @@ export default function compose(state = initialState, action) {
       map.set('id', null);
       map.set('in_reply_to', action.status.get('id'));
       map.set('quote_from', null);
-      map.set('quote_from_url', null);
       map.set('text', statusToTextMentions(state, action.status));
       map.set('privacy', privacyPreference(action.status.get('visibility'), state.get('default_privacy')));
       map.set('focusDate', new Date());
@@ -356,12 +354,13 @@ export default function compose(state = initialState, action) {
     });
   case COMPOSE_QUOTE:
     return state.withMutations(map => {
+      map.set('id', null);
       map.set('in_reply_to', null);
       map.set('quote_from', action.status.get('id'));
-      map.set('quote_from_url', action.status.get('url'));
       map.set('text', '');
       map.set('privacy', privacyPreference(action.status.get('visibility'), state.get('default_privacy')));
       map.set('focusDate', new Date());
+      map.set('caretPosition', null);
       map.set('preselectDate', new Date());
       map.set('idempotencyKey', uuid());
 
@@ -377,9 +376,9 @@ export default function compose(state = initialState, action) {
   case COMPOSE_QUOTE_CANCEL:
   case COMPOSE_RESET:
     return state.withMutations(map => {
+      map.set('id', null);
       map.set('in_reply_to', null);
       map.set('quote_from', null);
-      map.set('quote_from_url', null);
       map.set('text', '');
       map.set('spoiler', false);
       map.set('spoiler_text', '');
@@ -488,8 +487,7 @@ export default function compose(state = initialState, action) {
     return state.withMutations(map => {
       map.set('text', action.raw_text || unescapeHTML(rejectQuoteAltText(expandMentions(action.status))));
       map.set('in_reply_to', action.status.get('in_reply_to_id'));
-      map.set('quote_from', action.status.getIn(['quote', 'id']));
-      map.set('quote_from_url', action.status.getIn(['quote', 'url']));
+      map.set('quote_from', action.status.get('quote'));
       map.set('privacy', action.status.get('visibility'));
       map.set('media_attachments', action.status.get('media_attachments'));
       map.set('focusDate', new Date());

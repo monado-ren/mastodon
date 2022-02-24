@@ -6,9 +6,20 @@ import QuoteIndicator from '../components/quote_indicator';
 const makeMapStateToProps = () => {
   const getStatus = makeGetStatus();
 
-  const mapStateToProps = state => ({
-    status: getStatus(state, { id: state.getIn(['compose', 'quote_from']) }),
-  });
+  const mapStateToProps = state => {
+    let statusId = state.getIn(['compose', 'id'], null);
+    let editing  = true;
+
+    if (statusId === null) {
+      statusId = state.getIn(['compose', 'quote_from']);
+      editing  = false;
+    }
+
+    return {
+      status: getStatus(state, { id: statusId }),
+      editing,
+    };
+  };
 
   return mapStateToProps;
 };

@@ -533,13 +533,8 @@ class Video extends React.PureComponent {
 
     if (inline && containerWidth) {
       width  = containerWidth;
-      height = containerWidth / (16/9);
+      height = containerWidth / (16/9) / (quote ? 2 : 1);
 
-      playerStyle.height = height;
-    }
-
-    if (quote && height) {
-      height /= 2;
       playerStyle.height = height;
     }
 

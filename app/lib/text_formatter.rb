@@ -53,8 +53,7 @@ class TextFormatter
   private
 
   def quotify(html, quote_uri)
-    url = ActivityPub::TagManager.instance.url_for(status.quote)
-    link = link_to_url(quote_uri)
+    link = link_to_url(url: quote_uri)
     html.sub(/(<[^>]+>)\z/, "<span class=\"quote-inline\"><br/>QT: #{link}</span>\\1")
   end
 

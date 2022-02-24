@@ -88,7 +88,7 @@ class ActionBar extends React.PureComponent {
   }
 
   handleQuoteClick = () => {
-    this.props.onQuote(this.props.status, this.context.router.history);
+    this.props.onQuote(this.props.status);
   }
 
   handleFavouriteClick = () => {

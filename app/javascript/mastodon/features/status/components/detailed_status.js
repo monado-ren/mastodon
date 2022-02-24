@@ -200,6 +200,7 @@ class DetailedStatus extends ImmutablePureComponent {
               foregroundColor={attachment.getIn(['meta', 'colors', 'foreground'])}
               accentColor={attachment.getIn(['meta', 'colors', 'accent'])}
               height={60}
+              quote
             />
           );
         } else if (quote_status.getIn(['media_attachments', 0, 'type']) === 'video') {
@@ -240,7 +241,7 @@ class DetailedStatus extends ImmutablePureComponent {
 
       if (quote_muted) {
         quote = (
-          <div className='quote-status' data-id={quote_status.get('id')} dataurl={quote_status.get('url')}>
+          <div className={classNames('quote-status', `status-${status.get('visibility')}`, { compact })} data-id={quote_status.get('id')} dataurl={quote_status.get('url')}>
             <div className='status__content muted-quote'>
               <FormattedMessage id='status.muted_quote' defaultMessage='Muted quote' />
             </div>
@@ -248,20 +249,21 @@ class DetailedStatus extends ImmutablePureComponent {
         );
       } else {
         quote = (
-          <div className='quote-status' data-id={quote_status.get('id')} dataurl={quote_status.get('url')}>
+          <div className={classNames('quote-status', `status-${status.get('visibility')}`, { compact })} data-id={quote_status.get('id')} dataurl={quote_status.get('url')}>
             <a href={quote_status.getIn(['account', 'url'])} onClick={this.handleQuoteAccountClick} className='detailed-status__display-name'>
               <div className='detailed-status__display-avatar'><Avatar account={quote_status.get('account')} size={18} /></div>
               <DisplayName account={quote_status.get('account')} localDomain={this.props.domain} />
             </a>
 
             <StatusContent status={quote_status} onClick={this.handleQuoteClick} expanded={!quote_status.get('hidden')} onExpandedToggle={this.handleExpandedQuoteToggle} quote />
+
             {quote_media}
           </div>
         );
       }
     } else if (quote_muted) {
       quote = (
-        <div className={classNames('quote-status', { muted: this.props.muted })}>
+        <div className={classNames('quote-status', `status-${status.get('visibility')}`, { compact, muted: this.props.muted })}>
           <div className={classNames('status__content muted-quote', { 'status__content--with-action': this.context.router })}>
             <FormattedMessage id='status.muted_quote' defaultMessage='Muted quote' />
           </div>

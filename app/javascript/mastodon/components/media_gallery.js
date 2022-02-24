@@ -326,17 +326,13 @@ class MediaGallery extends React.PureComponent {
         style.height = width / this.props.media.getIn([0, 'meta', 'small', 'aspect']);
       }
     } else if (width) {
-      style.height = width / (16/9);
+      style.height = width / (16/9) / (quote ? 2 : 1);
     } else {
-      style.height = height;
+      style.height = height / (quote ? 2 : 1);
     }
 
     const size     = media.take(4).size;
     const uncached = media.every(attachment => attachment.get('type') === 'unknown');
-
-    if (quote && style.height) {
-      style.height /= 2;
-    }
 
     if (standalone && this.isFullSizeEligible()) {
       children = <Item standalone autoplay={autoplay} onClick={this.handleClick} attachment={media.get(0)} displayWidth={width} visible={visible} />;

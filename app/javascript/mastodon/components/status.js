@@ -572,6 +572,7 @@ class Status extends ImmutablePureComponent {
                   height={70}
                   cacheWidth={this.props.cacheMediaWidth}
                   deployPictureInPicture={pictureInPicture.get('available') ? this.handleDeployPictureInPicture : undefined}
+                  quote
                   />
               )}
             </Bundle>
@@ -625,7 +626,7 @@ class Status extends ImmutablePureComponent {
 
       if (quote_muted) {
         quote = (
-          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { muted: this.props.muted })} data-id={quote_status.get('id')}>
+          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { 'status-reply': !!quote_status.get('in_reply_to_id'), muted: this.props.muted })} data-id={quote_status.get('id')}>
             <div className={classNames('status__content muted-quote', { 'status__content--with-action': this.context.router })}>
               <FormattedMessage id='status.muted_quote' defaultMessage='Muted quote' />
             </div>
@@ -633,7 +634,7 @@ class Status extends ImmutablePureComponent {
         );
       } else if (quote_status.get('visibility') === 'unlisted' && !!contextType && ['public', 'community', 'hashtag'].includes(contextType.split(':', 2)[0])) {
         quote = (
-          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { muted: this.props.muted })} data-id={quote_status.get('id')}>
+          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { 'status-reply': !!quote_status.get('in_reply_to_id'), muted: this.props.muted })} data-id={quote_status.get('id')}>
             <div className={classNames('status__content unlisted-quote', { 'status__content--with-action': this.context.router })}>
               <button onClick={this.handleQuoteClick}>
                 <FormattedMessage id='status.unlisted_quote' defaultMessage='Unlisted quote' />
@@ -643,21 +644,23 @@ class Status extends ImmutablePureComponent {
         );
       } else {
         quote = (
-          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { muted: this.props.muted })} data-id={quote_status.get('id')}>
+          <div className={classNames('quote-status', `status-${quote_status.get('visibility')}`, { 'status-reply': !!quote_status.get('in_reply_to_id'), muted: this.props.muted })} data-id={quote_status.get('id')}>
             <div className='status__info'>
               <a onClick={this.handleQuoteAccountClick} target='_blank' href={quote_status.getIn(['account', 'url'])} title={quote_status.getIn(['account', 'acct'])} className='status__display-name'>
                 <div className='status__avatar'><Avatar account={quote_status.get('account')} size={18} /></div>
                 <DisplayName account={quote_status.get('account')} />
               </a>
             </div>
+
             <StatusContent status={quote_status} onClick={this.handleQuoteClick} expanded={!quote_status.get('hidden')} onExpandedToggle={this.handleExpandedQuoteToggle} quote />
+
             {quote_media}
           </div>
         );
       }
     } else if (quote_muted) {
       quote = (
-        <div className={classNames('quote-status', { muted: this.props.muted })}>
+        <div className={classNames('quote-status', { 'status-reply': false, muted: this.props.muted })}>
           <div className={classNames('status__content muted-quote', { 'status__content--with-action': this.context.router })}>
             <FormattedMessage id='status.muted_quote' defaultMessage='Muted quote' />
           </div>

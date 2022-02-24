@@ -32,7 +32,7 @@ class QuoteIndicator extends ImmutablePureComponent {
   handleAccountClick = (e) => {
     if (e.button === 0 && !(e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      this.context.router.history.push(`/accounts/${this.props.status.getIn(['account', 'id'])}`);
+      this.context.router.history.push(`/@${this.props.status.getIn(['account', 'acct'])}`);
     }
   }
 
@@ -48,7 +48,7 @@ class QuoteIndicator extends ImmutablePureComponent {
     return (
       <div className='quote-indicator'>
         <div className='quote-indicator__header'>
-          <div className='quote-indicator__cancel'><IconButton title={intl.formatMessage(messages.cancel)} icon='times' onClick={this.handleClick} /></div>
+          <div className='quote-indicator__cancel'><IconButton title={intl.formatMessage(messages.cancel)} icon='times' onClick={this.handleClick} inverted /></div>
 
           <a href={status.getIn(['account', 'url'])} onClick={this.handleAccountClick} className='quote-indicator__display-name'>
             <div className='quote-indicator__display-avatar'><Avatar account={status.get('account')} size={24} /></div>
@@ -56,7 +56,7 @@ class QuoteIndicator extends ImmutablePureComponent {
           </a>
         </div>
 
-        <div className='quote-indicator__content' dir='auto' dangerouslySetInnerHTML={content} />
+        <div className='quote-indicator__content translate' dangerouslySetInnerHTML={content} />
 
         {status.get('media_attachments').size > 0 && (
           <AttachmentList
