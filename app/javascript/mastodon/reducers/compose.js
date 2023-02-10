@@ -356,6 +356,8 @@ export default function compose(state = initialState, action) {
       map.set('preselectDate', new Date());
       map.set('idempotencyKey', uuid());
 
+      map.update('media_attachments', list => list.filter(media => media.get('unattached')));
+
       if (action.status.get('spoiler_text').length > 0) {
         map.set('spoiler', true);
         map.set('spoiler_text', action.status.get('spoiler_text'));
@@ -375,6 +377,8 @@ export default function compose(state = initialState, action) {
       map.set('caretPosition', null);
       map.set('preselectDate', new Date());
       map.set('idempotencyKey', uuid());
+
+      map.update('media_attachments', list => list.filter(media => media.get('unattached')));
 
       if (action.status.get('spoiler_text').length > 0) {
         map.set('spoiler', true);
