@@ -269,7 +269,7 @@ class EmojiPickerMenu extends React.PureComponent {
           sheetSize={64}
           custom={buildCustomEmojis(custom_emojis)}
           color=''
-          emoji='grinning'
+          emoji='cdko_happy'
           set='twitter'
           title={title}
           i18n={this.getI18n()}
