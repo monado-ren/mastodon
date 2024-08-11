@@ -285,6 +285,15 @@ class Status < ApplicationRecord
     end
   end
 
+  def ordered_media_attachments
+    if ordered_media_attachment_ids.nil?
+      media_attachments
+    else
+      map = media_attachments.index_by(&:id)
+      ordered_media_attachment_ids.filter_map { |media_attachment_id| map[media_attachment_id] }
+    end
+  end
+
   def replies_count
     status_stat&.replies_count || 0
   end
@@ -374,13 +383,25 @@ class Status < ApplicationRecord
 
       account_ids.uniq!
 
+      status_ids = cached_items.map { |item| item.reblog? ? item.reblog_of_id : item.id }.uniq
+
       return if account_ids.empty?
 
       accounts = Account.where(id: account_ids).includes(:account_stat, :user).index_by(&:id)
 
+      status_stats = StatusStat.where(status_id: status_ids).index_by(&:status_id)
+
       cached_items.each do |item|
         item.account = accounts[item.account_id]
         item.reblog.account = accounts[item.reblog.account_id] if item.reblog?
+
+        if item.reblog?
+          status_stat = status_stats[item.reblog.id]
+          item.reblog.status_stat = status_stat if status_stat.present?
+        else
+          status_stat = status_stats[item.id]
+          item.status_stat = status_stat if status_stat.present?
+        end
       end
     end
 
