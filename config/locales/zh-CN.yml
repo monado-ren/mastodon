@@ -880,7 +880,7 @@ zh-CN:
     advanced_web_interface: 高级 Web 界面
     advanced_web_interface_hint: 如果你想使用整个屏幕宽度，高级 web 界面允许您配置多个不同的栏目，可以同时看到更多的信息：主页、通知、跨站时间轴、任意数量的列表和话题标签。
     animations_and_accessibility: 动画和访问选项
-    confirmation_dialogs: 确认对话框
+    confirmation_dialogs: 二次确认对话框
     discovery: 发现
     localization:
       body: Mastodon 由志愿者翻译。
