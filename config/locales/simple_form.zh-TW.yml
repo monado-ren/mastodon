@@ -175,6 +175,7 @@ zh-TW:
         setting_trends: 顯示本日趨勢
         setting_unfollow_modal: 取消跟隨某人前先詢問我
         setting_use_blurhash: 將隱藏媒體以彩色漸變圖樣表示
+        setting_disable_swiping: 禁用主頁滑動
         setting_use_pending_items: 限速模式
         severity: 優先級
         sign_in_token_attempt: 安全代碼
