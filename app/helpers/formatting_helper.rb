@@ -17,7 +17,6 @@ module FormattingHelper
   def status_content_format(status)
     html_aware_format(status.text, status.local?,
       preloaded_accounts: [status.account] + (status.respond_to?(:active_mentions) ? status.active_mentions.map(&:account) : []),
-      quote_uri: status.quote? ? ActivityPub::TagManager.instance.url_for(status.quote) : nil,
     )
   end
 
