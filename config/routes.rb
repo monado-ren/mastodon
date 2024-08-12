@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'sidekiq_unique_jobs/web'
+require 'sidekiq_unique_jobs/web' if ENV['ENABLE_SIDEKIQ_UNIQUE_JOBS_UI'] == true
 require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
@@ -183,6 +183,7 @@ Rails.application.routes.draw do
 
   get '/public', to: 'public_timelines#show', as: :public_timeline
   get '/media_proxy/:id/(*any)', to: 'media_proxy#show', as: :media_proxy, format: false
+  get '/backups/:id/download', to: 'backups#download', as: :download_backup, format: false
 
   resource :authorize_interaction, only: [:show, :create]
   resource :share, only: [:show, :create]
@@ -225,7 +226,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :instances, only: [:index, :show, :destroy], constraints: { id: /[^\/]+/ } do
+    resources :instances, only: [:index, :show, :destroy], constraints: { id: /[^\/]+/ }, format: 'html' do
       member do
         post :clear_delivery_errors
         post :restart_delivery
@@ -394,7 +395,9 @@ Rails.application.routes.draw do
         resources :list, only: :show
       end
 
-      resources :streaming, only: [:index]
+      get '/streaming', to: 'streaming#index'
+      get '/streaming/(*any)', to: 'streaming#index'
+
       resources :custom_emojis, only: [:index]
       resources :suggestions, only: [:index, :destroy]
       resources :scheduled_statuses, only: [:index, :show, :update, :destroy]
