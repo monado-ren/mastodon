@@ -1426,6 +1426,7 @@ zh-TW:
     edited_at_html: 編輯於 %{date}
     errors:
       in_reply_not_found: 您嘗試回覆的嘟文看起來不存在。
+    local_only: 僅本實例可見
     open_in_web: 以網頁開啟
     over_character_limit: 超過了 %{max} 字的限制
     pin_errors:
