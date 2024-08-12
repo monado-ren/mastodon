@@ -276,15 +276,6 @@ class Status < ApplicationRecord
     end
   end
 
-  def ordered_media_attachments
-    if ordered_media_attachment_ids.nil?
-      media_attachments
-    else
-      map = media_attachments.index_by(&:id)
-      ordered_media_attachment_ids.filter_map { |media_attachment_id| map[media_attachment_id] }
-    end
-  end
-
   def replies_count
     status_stat&.replies_count || 0
   end
