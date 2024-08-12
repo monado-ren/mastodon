@@ -49,6 +49,7 @@ zh-TW:
         phrase: 無論是嘟文的本文或是內容警告都會被過濾
         scopes: 允許讓應用程式存取的 API。 若您選擇最高階範圍，則無須選擇個別項目。
         setting_aggregate_reblogs: 請勿顯示最近已被轉嘟之嘟文的最新轉嘟（只影響最新收到的嘟文）
+        setting_default_federation: 關閉後，除非在發嘟時手動指定，否則嘟文不會傳遞給其他實例
         setting_always_send_emails: 一般情況下若您活躍使用 Mastodon ，我們不會寄送 e-mail 通知
         setting_default_sensitive: 敏感媒體預設隱藏，且按一下即可重新顯示
         setting_display_media_default: 隱藏標為敏感的媒體
@@ -156,6 +157,7 @@ zh-TW:
         setting_auto_play_gif: 自動播放 GIF 動畫
         setting_boost_modal: 在轉嘟前先詢問我
         setting_crop_images: 將未展開嘟文中的圖片裁剪至 16x9
+        setting_default_federation: 默認允許自己的嘟文出現在其他實例上
         setting_default_language: 嘟文語言
         setting_default_privacy: 嘟文可見範圍
         setting_default_sensitive: 總是將媒體標記為敏感內容

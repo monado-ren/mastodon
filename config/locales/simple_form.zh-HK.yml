@@ -46,6 +46,7 @@ zh-HK:
         phrase: 過濾器會閱讀文章和內容警告標語的字眼，然後決定過濾與否
         scopes: 選擇應用程式可以存取的 API。 若你選擇最高階的權限範圍，則無須選擇個別項目。
         setting_aggregate_reblogs: 請勿顯示新近被轉推的文章（只影響最新被推的文章）
+        setting_default_federation: 關閉後，除非在發嘟時手動指定，否則嘟文不會傳遞給其他實例
         setting_default_sensitive: 敏感媒體預設隱藏，且按一下即可重新顯示
         setting_display_media_default: 隱藏標為敏感的媒體
         setting_display_media_hide_all: 總是隱藏所有媒體
@@ -148,6 +149,7 @@ zh-HK:
         setting_auto_play_gif: 自動播放 GIF
         setting_boost_modal: 在轉推前詢問我
         setting_crop_images: 將未展開文章中的圖片裁剪到 16x9
+        setting_default_federation: 默認允許自己的嘟文出現在其他實例上
         setting_default_language: 文章語言
         setting_default_privacy: 文章預設為
         setting_default_sensitive: 預設我的內容為敏感內容
