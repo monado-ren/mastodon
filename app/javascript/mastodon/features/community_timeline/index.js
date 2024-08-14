@@ -108,7 +108,7 @@ class CommunityTimeline extends React.PureComponent {
     return (
       <Column bindToDocument={!multiColumn} ref={this.setRef} label={intl.formatMessage(messages.title)}>
         <ColumnHeader
-          icon='users'
+          icon='gamepad'
           active={hasUnread}
           title={intl.formatMessage(messages.title)}
           onPin={this.handlePin}

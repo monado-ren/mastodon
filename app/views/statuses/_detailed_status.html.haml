@@ -61,9 +61,9 @@
       ·
     = link_to remote_interaction_path(status, type: :reply), class: 'modal-button detailed-status__link' do
       - if status.in_reply_to_id.nil?
-        = fa_icon('reply')
+        = fa_icon('comment')
       - else
-        = fa_icon('reply-all')
+        = fa_icon('comments')
       %span.detailed-status__reblogs>= friendly_number_to_human status.replies_count
       = " "
     ·
@@ -74,7 +74,7 @@
         = " "
       ·
     = link_to remote_interaction_path(status, type: :favourite), class: 'modal-button detailed-status__link' do
-      = fa_icon('star')
+      = fa_icon('heart')
       %span.detailed-status__favorites>= friendly_number_to_human status.favourites_count
       = " "
 

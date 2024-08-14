@@ -65,14 +65,14 @@ class FilterBar extends React.PureComponent {
           onClick={this.onClick('mention')}
           title={intl.formatMessage(tooltips.mentions)}
         >
-          <Icon id='reply-all' fixedWidth />
+          <Icon id='comments' fixedWidth />
         </button>
         <button
           className={selectedFilter === 'favourite' ? 'active' : ''}
           onClick={this.onClick('favourite')}
           title={intl.formatMessage(tooltips.favourites)}
         >
-          <Icon id='star' fixedWidth />
+          <Icon id='heart' fixedWidth />
         </button>
         <button
           className={selectedFilter === 'reblog' ? 'active' : ''}
@@ -86,7 +86,7 @@ class FilterBar extends React.PureComponent {
           onClick={this.onClick('poll')}
           title={intl.formatMessage(tooltips.polls)}
         >
-          <Icon id='tasks' fixedWidth />
+          <Icon id='signal' fixedWidth />
         </button>
         <button
           className={selectedFilter === 'status' ? 'active' : ''}
