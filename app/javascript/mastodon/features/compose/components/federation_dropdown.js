@@ -214,7 +214,7 @@ export default class FederationDropdown extends React.PureComponent {
   }
 
   render () {
-    const { value, intl } = this.props;
+    const { value, disabled, intl } = this.props;
     const { open, placement } = this.state;
 
     const valueOption = this.options.find(item => item.value === value);
@@ -232,6 +232,7 @@ export default class FederationDropdown extends React.PureComponent {
             inverted
             onClick={this.handleToggle}
             style={{ height: null, lineHeight: '27px' }}
+            disabled={disabled}
           />
         </div>
 
