@@ -373,6 +373,7 @@ export default function compose(state = initialState, action) {
       map.set('quote_from', action.status.get('id'));
       map.set('text', '');
       map.set('privacy', privacyPreference(action.status.get('visibility'), state.get('default_privacy')));
+      map.set('federation', !action.status.get('local_only'));
       map.set('focusDate', new Date());
       map.set('caretPosition', null);
       map.set('preselectDate', new Date());
@@ -535,6 +536,7 @@ export default function compose(state = initialState, action) {
       map.set('text', action.text);
       map.set('in_reply_to', action.status.get('in_reply_to_id'));
       map.set('privacy', action.status.get('visibility'));
+      map.set('federation', !action.status.get('local_only'));
       map.set('media_attachments', action.status.get('media_attachments'));
       map.set('focusDate', new Date());
       map.set('caretPosition', null);
