@@ -471,9 +471,9 @@ class MediaGallery extends React.PureComponent {
         style.height = width / this.props.media.getIn([0, 'meta', 'small', 'aspect']);
       }
     } else if (width) {
-      style.height = width / (16/9) / (quote ? 2 : 1);
+      style.height = width / (16/9) / (quote ? 1 : 1);
     } else {
-      style.height = height / (quote ? 2 : 1);
+      style.height = height / (quote ? 1 : 1);
     }
 
     const size     = media.take(9).size;
