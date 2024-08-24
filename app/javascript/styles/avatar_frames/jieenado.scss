@@ -1,0 +1,91 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+  .account__avatar[data-avatar-frame-type="jieenado"] {
+    transform: scale(.8);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+    span.account__avatar__frame {
+      background-image: url("https://media.monado.ren/site_uploads/avatar_frames/d84355d0a5a760ff964c57735ffb5156.png");
+      content: "";
+      width: 237.5%;
+      height: 950%;
+      position: absolute;
+      z-index: 1;
+      background-size: 100% 100%;
+      top: -425%;
+      left: -70%;
+      animation: monadorotation 25s infinite linear;
+    }
+  }
+}
+
+// fix size in detail page
+//.detailed-status__wrapper a.detailed-status__display-name {
+//  .account__avatar.account__avatar__frame__jieenado {
+//    transform: scale(calc(1 / 1.76))
+//  }
+//}
+
+.detailed-status__wrapper a.detailed-status__display-name:has(.account__avatar[data-avatar-frame-type="jieenado"]) {
+  display: inline;
+
+  div.detailed-status__display-avatar {
+      margin-bottom: 15px
+  }
+}
+
+// public account page (can do noting with the header img with css)
+.status a.status__display-name .status__avatar[data-avatar-frame-type="jieenado"] {
+  transform: scale(.8);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+
+  span.account__avatar__frame {
+    background-image: url("https://media.monado.ren/site_uploads/avatar_frames/d84355d0a5a760ff964c57735ffb5156.png");
+    content: "";
+    width: 237.5%;
+    height: 950%;
+    position: absolute;
+    z-index: 1;
+    background-size: 100% 100%;
+    top: -425%;
+    left: -70%;
+    animation: monadorotation 25s infinite linear;
+  }
+}
+
+@keyframes monadorotation {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: rotate(449deg);
+  }
+}
+
+
+.card__bar .avatar[data-avatar-frame-type="jieenado"] {
+  img.u-photo {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+  }
+
+  span.account__avatar__frame {
+    background-image: url("https://media.monado.ren/site_uploads/avatar_frames/d84355d0a5a760ff964c57735ffb5156.png");
+    content: "";
+    width: 237.5%;
+    height: 950%;
+    position: absolute;
+    z-index: 1;
+    background-size: 100% 100%;
+    top: -425%;
+    left: -70%;
+    animation: monadorotation 25s infinite linear;
+  }
+}

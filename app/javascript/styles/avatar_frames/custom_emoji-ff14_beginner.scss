@@ -1,0 +1,158 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+    .account__avatar[data-avatar-frame-type="custom_emoji-ff14_beginner"] {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+
+        span.account__avatar__frame {
+            background-image: url("https://media.monado.ren/custom_emojis/images/000/096/064/original/4383df345de05266.png");
+            content: "";
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            z-index: 1;
+            background-size: 100% 100%;
+            top: -35%;
+            left: 25%;
+        }
+
+        &:hover span.account__avatar__frame {
+            animation-name: upAnimation;
+            transform-origin: center bottom;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-delay: .5s;
+        }
+
+
+    }
+}
+
+@keyframes upAnimation {
+    0% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    10% {
+        transform: rotate(-12deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    20% {
+        transform: rotate(12deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    28% {
+        transform: rotate(-10deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+
+    36% {
+        transform: rotate(10deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    42% {
+        transform: rotate(-8deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    48% {
+        transform: rotate(8deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    52% {
+        transform: rotate(-4deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    56% {
+        transform: rotate(4deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    60% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06)
+    }
+
+    100% {
+        transform: rotate(0deg);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+}
+
+// fix size in detail page
+.detailed-status__wrapper a.detailed-status__display-name:has(.account__avatar[data-avatar-frame-type="custom_emoji-ff14_beginner"]) {
+    display: inline;
+
+    div.detailed-status__display-avatar {
+        margin-bottom: 15px
+    }
+}
+
+// public account page (can do noting with the header img with css)
+// .detailed-status-public a.detailed-status__display-name.u-url[href="https://mona.do/@#{$name}"] .detailed-status__display-avatar 会崩坏
+.status a.status__display-name .status__avatar[data-avatar-frame-type="custom_emoji-ff14_beginner"] {
+    //transform: scale(1.3);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/custom_emojis/images/000/096/064/original/4383df345de05266.png");
+        content: "";
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -35%;
+        left: 25%;
+    }
+
+    &:hover span.account__avatar__frame {
+        animation-name: upAnimation;
+        transform-origin: center bottom;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-delay: .5s;
+    }
+}
+
+
+.card__bar .avatar[data-avatar-frame-type="custom_emoji-ff14_beginner"] {
+    img.u-photo {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+    }
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/custom_emojis/images/000/096/064/original/4383df345de05266.png");
+        content: "";
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -35%;
+        left: 25%;
+    }
+
+    &:hover span.account__avatar__frame {
+        animation-name: upAnimation;
+        transform-origin: center bottom;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-delay: .5s;
+    }
+}

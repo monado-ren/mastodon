@@ -1,0 +1,65 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+    .account__avatar[data-avatar-frame-type="ffxiv"] {
+        transform: unset;
+        border-radius: 15%;
+        background-color: #747474;
+
+        span.account__avatar__frame {
+            background-image: url("https://media.monado.ren/site_uploads/240401/job_frame.png");
+            content: "";
+            width: 122%;
+            height: 122%;
+            position: absolute;
+            z-index: 1;
+            background-size: 100% 100%;
+            border-radius: 0px;
+            top: -11%;
+            left: -11%;
+        }
+    }
+
+    //&[href^="https://mona.do"] .account__avatar::before {
+    //    background-image: url(#{$xiv_frame_lv0d});
+    //}
+}
+
+// fix size in detail page
+//.detailed-status__wrapper a.detailed-status__display-name {
+//    .account__avatar.account__avatar__frame__ffxiv {
+//        transform: scale(0.85);
+//    }
+//}
+
+.detailed-status__wrapper a.detailed-status__display-name:has(.account__avatar[data-avatar-frame-type="ffxiv"]) {
+    display: inline;
+
+    div.detailed-status__display-avatar {
+        margin-bottom: 15px
+    }
+}
+
+.card__bar .avatar[data-avatar-frame-type="ffxiv"] {
+    img.u-photo {
+        transform: unset;
+        border-radius: 15%;
+        background-color: #747474;
+    }
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/site_uploads/240401/job_frame.png");
+        content: "";
+        width: 122%;
+        height: 122%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        border-radius: 0px;
+        top: -11%;
+        left: -11%;
+    }
+}

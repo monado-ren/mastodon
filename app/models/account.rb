@@ -49,6 +49,7 @@
 #  trendable                     :boolean
 #  reviewed_at                   :datetime
 #  requested_review_at           :datetime
+#  avatar_frame_type             :string
 #
 
 class Account < ApplicationRecord

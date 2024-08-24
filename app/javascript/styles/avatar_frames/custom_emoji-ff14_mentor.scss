@@ -1,0 +1,73 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+    .account__avatar[data-avatar-frame-type="custom_emoji-ff14_mentor"] {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+
+        span.account__avatar__frame {
+            background-image: url("https://media.monado.ren/custom_emojis/images/000/096/068/original/b84f2b8f9dad30ee.png");
+            content: "";
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            z-index: 1;
+            background-size: 100% 100%;
+            top: -35%;
+            left: 25%;
+        }
+
+    }
+}
+
+// fix size in detail page
+.detailed-status__wrapper a.detailed-status__display-name:has(.account__avatar[data-avatar-frame-type="custom_emoji-ff14_mentor"]) {
+    display: inline;
+
+    div.detailed-status__display-avatar {
+        margin-bottom: 15px
+    }
+}
+
+// public account page (can do noting with the header img with css)
+// .detailed-status-public a.detailed-status__display-name.u-url[href="https://mona.do/@#{$name}"] .detailed-status__display-avatar 会崩坏
+.status a.status__display-name .status__avatar[data-avatar-frame-type="custom_emoji-ff14_mentor"] {
+    //transform: scale(1.3);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/custom_emojis/images/000/096/068/original/b84f2b8f9dad30ee.png");
+        content: "";
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -35%;
+        left: 25%;
+    }
+}
+
+
+.card__bar .avatar[data-avatar-frame-type="custom_emoji-ff14_mentor"] {
+    img.u-photo {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+    }
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/custom_emojis/images/000/096/068/original/b84f2b8f9dad30ee.png");
+        content: "";
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -35%;
+        left: 25%;
+    }
+}

@@ -63,7 +63,13 @@ export default class Avatar extends React.PureComponent {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         style={style}
-      />
+        data-avatar-frame-type={account.get('avatar_frame_type') || 'default'}
+      >
+        <span
+          className={classNames(`account__avatar__frame`)}
+        >
+        </span>
+      </div>
     );
   }
 

@@ -6,7 +6,8 @@ class REST::AccountSerializer < ActiveModel::Serializer
 
   attributes :id, :username, :acct, :display_name, :locked, :bot, :discoverable, :group, :created_at,
              :note, :url, :avatar, :avatar_static, :header, :header_static,
-             :followers_count, :following_count, :statuses_count, :last_status_at
+             :followers_count, :following_count, :statuses_count, :last_status_at,
+             :avatar_frame_type
 
   has_one :moved_to_account, key: :moved, serializer: REST::AccountSerializer, if: :moved_and_not_nested?
 
@@ -59,6 +60,14 @@ class REST::AccountSerializer < ActiveModel::Serializer
 
   def avatar_static
     full_asset_url(object.suspended? ? object.avatar.default_url : object.avatar_static_url)
+  end
+
+  def avatar_frame_type
+    object.avatar_frame_type
+  end
+
+  def avatar_frame
+    full_asset_url(object.suspended? ? object.header.default_url : object.avatar_frame_original_url)
   end
 
   def header

@@ -1,0 +1,24 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+    .account__avatar[data-avatar-frame-type="circle"] {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+    }
+}
+
+// public account page (can do noting with the header img with css)
+.status a.status__display-name .status__avatar[data-avatar-frame-type="circle"] {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+}
+.card__bar .avatar[data-avatar-frame-type="circle"] {
+    img.u-photo {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+    }
+}

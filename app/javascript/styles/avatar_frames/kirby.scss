@@ -1,0 +1,79 @@
+// normal timeline
+.status__wrapper a.status__display-name,
+// toot detail page
+.detailed-status__wrapper a.detailed-status__display-name,
+// account page header
+.account__header__tabs a.avatar {
+    .account__avatar[data-avatar-frame-type="kirby"] {
+        transform: scale(.8);
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+
+        span.account__avatar__frame {
+            background-image: url("https://media.monado.ren/site_uploads/avatar_frames/kirby.png");
+            content: "";
+            width: 176%;
+            height: 176%;
+            position: absolute;
+            z-index: 1;
+            background-size: 100% 100%;
+            top: -38%;
+            left: -38%;
+        }
+    }
+}
+
+// fix size in detail page
+//.detailed-status__wrapper a.detailed-status__display-name {
+//  .account__avatar.account__avatar__frame__kirby {
+//    transform: scale(calc(1 / 1.76))
+//  }
+//}
+
+.detailed-status__wrapper a.detailed-status__display-name:has(.account__avatar[data-avatar-frame-type="kirby"]) {
+    display: inline;
+
+    div.detailed-status__display-avatar {
+        margin-bottom: 15px
+    }
+}
+
+
+// public account page (can do noting with the header img with css)
+.status a.status__display-name .status__avatar[data-avatar-frame-type="kirby"] {
+    transform: scale(.8);
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+
+    .account__avatar__frame {
+        background-image: url("https://media.monado.ren/site_uploads/avatar_frames/kirby.png");
+        content: "";
+        width: 176%;
+        height: 176%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -38%;
+        left: -38%;
+    }
+}
+
+
+.card__bar .avatar[data-avatar-frame-type="kirby"] {
+    img.u-photo {
+        background: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+    }
+
+    span.account__avatar__frame {
+        background-image: url("https://media.monado.ren/site_uploads/avatar_frames/kirby.png");
+        content: "";
+        width: 176%;
+        height: 176%;
+        position: absolute;
+        z-index: 1;
+        background-size: 100% 100%;
+        top: -38%;
+        left: -38%;
+    }
+}

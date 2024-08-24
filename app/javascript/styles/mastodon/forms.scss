@@ -172,6 +172,13 @@ code {
     }
   }
 
+  p.hint[data-avatar-frame-type] {
+    white-space: pre-wrap;
+    margin-bottom: 0px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
   .authentication-hint {
     margin-bottom: 25px;
   }

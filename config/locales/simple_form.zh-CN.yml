@@ -2,6 +2,46 @@
 zh-CN:
   simple_form:
     hints:
+      avatar_frames:
+        cdko: |
+          如果你想把CD子顶在头上的话
+          
+          作者：@aapa
+        ffxiv: |
+          狒批来了！  (捏鼻子)别太喜欢你那狒狒14了！
+          是嗼站2024年愚人节活动「嗼古莫古★大入侵 ～万愚～」的主题头像框
+          
+          原作：SQEX《最终幻想XIV》
+        salmonrunhelp: |
+          一旦换上了就让人忍不住连按求助的神奇头像框。
+
+          作者：@51miki 原作：任天堂《斯普拉遁》系列
+        splatoon3: |
+          孤高的酥脆旅行者——阿龙，在旅途中发现的超～酥脆火热涂鸦！各位心跳加速了吗～？
+          
+          原作：任天堂《斯普拉遁3》
+        zonai: |
+          充满左纳乌之力的神秘纹样，仿佛充满了让人上天入地的能量。
+
+          作者：@lmilmi 原作：任天堂《塞尔达传说 王囯之泪》
+        kirby: |
+          素材取自游研社的h5小程序"卡比头像框生成器"，是粉红色恶魔！
+          
+          作者：游研社 原作：任天堂《星之卡比》系列
+        default: ''
+        circle: ''
+        jieenado: |
+          神秘秃头男子受神秘修服务器男子委托绘制的纸片嗼纳多，后者应用神秘西丝丝神力使其能够转动。
+          是嗼站2022年愚人节活动「大剑转转转酒吧」的保底道具，会以25秒一圈的速度旋转。
+          画面有那么大点吵，不建议使用。
+
+          原作：MONOLITHSOFT《异度神剑1》
+        custom_emoji-ff14_beginner: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_returner: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_pvp: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_trade: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_battle: 原作：SQEX《最终幻想XIV》
       account_alias:
         acct: 指定你想要迁移过来的原账号：用户名@站点域名
       account_migration:
@@ -127,6 +167,7 @@ zh-CN:
       defaults:
         autofollow: 让被邀请人关注你的帐户
         avatar: 头像
+        avatar_frame_type: 头像框
         bot: 这是一个机器人帐户
         chosen_languages: 语言过滤
         confirm_new_password: 确认新密码

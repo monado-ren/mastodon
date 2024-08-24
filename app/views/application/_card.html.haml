@@ -5,8 +5,9 @@
     .card__img
       = image_tag account.header.url, alt: ''
     .card__bar
-      .avatar
+      .avatar{ data: { avatar_frame_type: account.avatar_frame_type || 'default' } }
         = image_tag account.avatar.url, alt: '', width: 48, height: 48, class: 'u-photo'
+        %span.account__avatar__frame
 
       .display-name
         %bdi

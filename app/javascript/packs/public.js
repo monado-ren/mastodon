@@ -189,6 +189,23 @@ function main() {
     window.open(href, 'mastodon-intent', 'width=445,height=600,resizable=no,menubar=no,status=no,scrollbars=yes');
   });
 
+  delegate(document, '#account_avatar_frame_type', 'input', ({ target }) => {
+    const avatar = document.querySelector('.card .avatar');
+    const hints = document.querySelectorAll('p.hint[data-avatar-frame-type]');
+    if (avatar) {
+        avatar.dataset.avatarFrameType = target.value
+
+        console.log("account__avatar__frame__"+target.value)
+        hints.forEach(function(hint) {
+          hint.hidden = true;
+        });
+        const selectedHint = document.querySelector(`p.hint[data-avatar-frame-type="${target.value}"]`);
+        if (selectedHint) {
+            selectedHint.hidden = false;
+        }
+    }
+  });
+
   delegate(document, '#account_display_name', 'input', ({ target }) => {
     const name = document.querySelector('.card .display-name strong');
     if (name) {

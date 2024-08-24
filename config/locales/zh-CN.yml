@@ -1,5 +1,21 @@
 ---
 zh-CN:
+  avatar_frames:
+    cdko: CD子趴趴
+    ffxiv: 最终幻想XIV风格
+    salmonrunhelp: 鱿泳圈
+    splatoon3: 椰子俱乐部
+    zonai: 王国之泪
+    kirby: 卡比塞满嘴
+    default: 默认（方形）
+    circle: 默认（圆形）
+    jieenado: 纸片嗼纳多
+    custom_emoji-ff14_beginner: 最终幻想XIV-新人
+    custom_emoji-ff14_returner: 最终幻想XIV-回归者
+    custom_emoji-ff14_mentor: 最终幻想XIV-指导者
+    custom_emoji-ff14_mentor_pvp: 最终幻想XIV-对战指导者
+    custom_emoji-ff14_mentor_trade: 最终幻想XIV-制作采集指导者
+    custom_emoji-ff14_mentor_battle: 最终幻想XIV-战斗指导者
   about:
     about_hashtag_html: 这里展示的是带有话题标签 <strong>#%{hashtag}</strong> 的公开嘟文。如果你想与他们互动，你需要在任意一个 Mastodon 站点或与其兼容的网站上拥有一个帐户。
     about_mastodon_html: Mastodon 是一个建立在开放式网络协议和自由、开源软件之上的社交网络，有着类似于电子邮件的分布式设计。
@@ -1589,6 +1605,7 @@ zh-CN:
     switch-white: Switch系统界面 (白色系)
     switch-black: Switch系统界面 (黑色系)
     nintendo-red: 任天堂风格 (红)
+    ffxiv: 最终幻想XIV风格（暗色主题）
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"
