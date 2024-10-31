@@ -1,0 +1,65 @@
+//--FFXIV风格 副本时间--
+
+.status__relative-time {
+    font-size: 18px;
+    /* margin-top: -5px; */
+    color: #e8fffe !important;
+    @include text-outline($pre: (0px 0px 1px #00000050, 0px 0px 1px #e8fffe), $blur: 1px, $color: #09498980);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #e8fffe, 1px 0px 1px #09498980, -1px 0px 1px #09498980, 0px 1px 1px #09498980, 0px -1px 1px #09498980;
+
+    >time::before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 22px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f017";
+        margin-right: 12px;
+        margin-top: -5px;
+        transform: rotateY(180deg) !important;
+    }
+
+    //取消前面的"反转了"的反转
+    >.status__visibility-icon {
+        >.fa {
+            transform: unset !important;
+
+            //调整嘟文类型图标的样式
+            &::before {
+                width: 24px;
+                height: 24px;
+                font-size: 16px;
+                background-size: 24px 24px;
+                display: inline-block;
+                position: relative;
+                top: -11px;
+                text-align: end;
+                vertical-align: sub;
+                margin: 4px 4px -15px 0px;
+            }
+
+        }
+
+        >.fa-globe::before {
+            background-image: url(#{$xiv_dungeon});
+        }
+
+        >.fa-unlock::before {
+            background-image: url(#{$xiv_raid});
+        }
+
+        >.fa-lock::before {
+            background-image: url(#{$xiv_trail});
+        }
+
+        >.fa-envelope::before {
+            background-image: url(#{$xiv_ultimate});
+            font-size: 12px;
+            top: -15px;
+        }
+
+    }
+
+
+}

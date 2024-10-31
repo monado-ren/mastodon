@@ -1,0 +1,26 @@
+// publish的嗼嗼
+.compose-form__publish-button-wrapper .button--block {
+    font-size: 0;
+    height: 26px;
+
+    &::after {
+        font-size: 14px;
+        content: '库啵';
+    }
+}
+
+.compose-form .compose-form__publish .compose-form__publish-button-wrapper {
+    padding: 10px;
+}
+
+.compose-form__publish-button-wrapper .button {
+    background: linear-gradient(#949294 -1%, #6b696b, #636563, #626062, #5d5c5d, #555655, #505050, #424242, #3a373a, #393939, #3c3c3c, #424042, #484548, #4e4d4e, #4a494a 103%);
+    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 50%);
+    border: 0px solid transparent;
+    border-radius: 15px;
+    border-top-color: #949294;
+    border-bottom-color: #4a494a;
+    line-height: 3px;
+    padding: 10px 33px 6px 33px;
+}
+

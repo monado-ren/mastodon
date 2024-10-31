@@ -1,0 +1,21 @@
+.compose-form .autosuggest-textarea__textarea {
+    padding-right: 40px!important;
+}
+
+.emoji-button img {
+    -webkit-filter: none;
+    filter: none;
+    opacity: 1;
+    width: 48px!important;
+    height: 48px!important;
+}
+.emoji-button>.emojione {
+    content: url(https://media.monado.ren/site_uploads/moogleiswatchingyou.png)!important;
+}
+
+.account__header__extra__links a strong {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'BebasNeue';
+    @include id-style_talk;
+}

@@ -1,0 +1,181 @@
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/notifications"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '收件箱';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+a.tabs-bar__link[href="/web/notifications"] span::after {
+    font-size: 14px;
+}
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/public/local"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '原始服务器';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+a.tabs-bar__link[href="/web/public/local"] span::after {
+    font-size: 14px;
+    content: '嗼芽池';
+}
+
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/public"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '跨界传送';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+a.tabs-bar__link[href="/web/public"] span::after {
+    font-size: 14px;
+    content: '跨服';
+}
+a.tabs-bar__link {
+    &[href="/web/search"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 14px;
+            content: '检索';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/favourites"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '最优嘟文推荐';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/follow_requests"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '好友申请';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/conversations"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '悄悄话';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/web/bookmarks"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '收藏柜';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/settings/preferences"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '角色设置';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}
+.navigation-panel a.column-link,
+a.tabs-bar__link {
+    &[href="/relationships"] span {
+        visibility: hidden;
+        letter-spacing: -999px;
+        word-spacing: -999px;
+
+        &::after {
+            font-size: 16px;
+            content: '好友名单';
+            visibility: visible;
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+    }
+}

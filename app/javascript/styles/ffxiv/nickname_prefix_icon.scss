@@ -1,0 +1,138 @@
+//--ID前的图标--
+
+//常规的常量
+@mixin normal-display-name-before-icon {
+    content: url(#{$xiv_remote_hr1});
+    top: 25.75px;
+    transform: scale(0.34375);
+    display: inline-block;
+    margin: -50px -20px 0px -20px;
+    position: relative;
+}
+
+//特殊：转嘟
+.status__prepend a.status__display-name[data-id] {
+    &::before {
+        @include normal-display-name-before-icon;
+    }
+
+    &[href^="#{$local_url}"]::before {
+        // content: url(#{$xiv_disconnecting});
+        content: '';
+        margin: 1px;
+    }
+}
+
+@mixin remote-suffix {
+    content: ' «放浪神加护»';
+    font-size: 14px;
+}
+
+@mixin local-suffix {
+    content: ' «口莫»';
+    font-size: 14px;
+}
+
+//搜索到的ID
+a.account__display-name {
+    .display-name strong::before {
+        @include normal-display-name-before-icon;
+        content: url(#{$xiv_remote_hr1});
+    }
+
+    strong::after {
+        @include remote-suffix;
+    }
+
+    &[href^="#{$local_url}"] {
+        .display-name strong::before {
+            // content: url(#{$xiv_disconnecting});
+            content: '';
+            margin: 1px;
+        }
+
+        strong::after {
+            @include local-suffix;
+        }
+    }
+}
+
+//详细
+.detailed-status__display-name,
+//私信
+.conversation__content__names a.permalink,
+//时间轴
+a.status__display-name {
+    .display-name__html {
+        &::before {
+            @include normal-display-name-before-icon;
+            content: url(#{$xiv_remote_hr1});
+        }
+
+    }
+
+    strong::after {
+        @include remote-suffix;
+    }
+
+    &[href^="#{$local_url}"] {
+        .display-name__html {
+            &::before {
+                // content: url(#{$xiv_disconnecting});
+                content: '';
+                margin: 1px;
+            }
+        }
+
+        strong::after {
+            @include local-suffix;
+        }
+    }
+}
+
+
+@mixin setIcon($icon, $username) {
+    @if $icon =='mentor_pvp' {
+        content: url(#{$xiv_mentor_pvp});
+    }
+
+    @else if $icon =='disconnecting' {
+        content: url(#{$xiv_disconnecting});
+    }
+
+    @else if $icon =='duty' {
+        content: url(#{$xiv_duty});
+    }
+
+    @else if $icon =='afk' {
+        content: url(#{$xiv_afk});
+    }
+
+    @else if $icon =='mentor' {
+        content: url(#{$xiv_mentor});
+    }
+
+    @else if $icon =='mentor_battle' {
+        content: url(#{$xiv_mentor_battle});
+    }
+
+    @else if $icon =='triple_triad' {
+        content: url(#{$xiv_triple_triad});
+    }
+
+    @else if $icon =='beginner' {
+        content: url(#{$xiv_beginner});
+    }
+
+    @else if $icon =='mentor_trade' {
+        content: url(#{$xiv_mentor_trade});
+    }
+
+    @else if $icon =='looking4party' {
+        content: url(#{$xiv_looking4party});
+    }
+
+    @else if $icon =='returner' {
+        content: url(#{$xiv_returner});
+    }
+}

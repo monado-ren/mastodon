@@ -1,0 +1,162 @@
+$xiv-text-highlight-color: #bbac94;
+$xiv-text-red-color: #d98298;
+$xiv-text-green-color: #6b993d;
+$xiv-text-white-color: #cccccc;
+$xiv-text-blue-color: #73bfe6;
+$xiv-background-base-color: #303030;
+$xiv-progress-color: #94be10;
+$xiv-button-blue-color: #342f71;
+$xiv-button-blue-color-active: #453d99;
+$xiv-text-highlight-gold-color: #e6a817;
+
+// Commonly used web colors
+$black: #000000; // Black
+$white: #ffffff; // White
+$success-green: #6b993d;
+$error-red: #d98298;
+$warning-red: #ff5050 !default; // Sunset Orange
+$gold-star: #ca8f04 !default; // Dark Goldenrod
+$red-heart: #e0245e;
+$blue: #5990ff;
+$light-red: #f599a0;
+$green: #18bdff;
+$tabs-back: #2d2d2d;
+
+$red-bookmark: $warning-red;
+
+// Values from the classic Mastodon UI
+$classic-base-color: #303030; // Midnight Express
+$classic-primary-color: #808080; // Echo Blue
+$classic-secondary-color: #cccccc; // Pattens Blue
+$classic-highlight-color: $xiv-button-blue-color-active; // Summer Sky
+
+// Variables for defaults in UI
+$base-shadow-color: $black !default;
+$base-overlay-background: $black !default;
+$base-border-color: $white !default;
+$simple-background-color: $white !default;
+$valid-value-color: $success-green !default;
+$error-value-color: $error-red !default;
+
+// Tell UI to use selected colors
+$ui-base-color: $classic-base-color !default; // Darkest
+$ui-base-lighter-color: lighten(
+  $ui-base-color,
+  26%
+) !default; // Lighter darkest
+$ui-primary-color: $classic-primary-color !default; // Lighter
+$ui-secondary-color: $classic-secondary-color !default; // Lightest
+$ui-highlight-color: $classic-highlight-color !default;
+
+// Variables for texts
+$primary-text-color: $white !default;
+$darker-text-color: $xiv-text-white-color !default;
+$dark-text-color: $ui-base-lighter-color !default;
+$secondary-text-color: $xiv-text-white-color !default;
+$highlight-text-color: $classic-highlight-color !default;
+$action-button-color: $ui-base-lighter-color !default;
+$passive-text-color: $gold-star !default;
+$active-passive-text-color: $success-green !default;
+// For texts on inverted backgrounds
+$inverted-text-color: $ui-base-color !default;
+$lighter-text-color: $ui-base-lighter-color !default;
+$light-text-color: $xiv-text-white-color !default;
+
+
+$local_url: "https://mona.do/";
+
+$xiv_home: "https://media.monado.ren/site_uploads/240401/0home.png";
+$xiv_notice: "https://media.monado.ren/site_uploads/240401/1notice.png";
+$xiv_request: "https://media.monado.ren/site_uploads/240401/3request.png";
+$xiv_local: "https://media.monado.ren/site_uploads/240401/2local.png";
+$xiv_remote: "https://media.monado.ren/site_uploads/240401/4remote.png";
+$xiv_remote_b: "https://media.monado.ren/site_uploads/240401/4remote_b.png";
+$xiv_direct: "https://media.monado.ren/site_uploads/240401/5direct.png";
+$xiv_like: "https://media.monado.ren/site_uploads/240401/6like.png";
+$xiv_bookmark: "https://media.monado.ren/site_uploads/240401/7mark.png";
+$xiv_list: "https://media.monado.ren/site_uploads/240401/8list.png";
+$xiv_settings: "https://media.monado.ren/site_uploads/240401/9settings.png";
+$xiv_manage: "https://media.monado.ren/site_uploads/240401/10manage.png";
+$xiv_search: "https://media.monado.ren/site_uploads/240401/11search.png";
+$xiv_bars: "https://media.monado.ren/site_uploads/240401/12bars.png";
+
+$xiv_dungeon: "https://media.monado.ren/site_uploads/240401/public.png";
+$xiv_raid: "https://media.monado.ren/site_uploads/240401/unlisted.png";
+$xiv_trail: "https://media.monado.ren/site_uploads/240401/private.png";
+$xiv_ultimate: "https://media.monado.ren/site_uploads/240401/direct.png";
+
+$xiv_remote_hr1: "https://media.monado.ren/site_uploads/240401/remote_hr1.png";
+$xiv_afk: "https://media.monado.ren/site_uploads/240401/061511_hr1.png";
+$xiv_disconnecting: "https://media.monado.ren/site_uploads/240401/061503_hr1.png";
+$xiv_duty: "https://media.monado.ren/site_uploads/240401/061517_hr1.png";
+$xiv_looking4party: "https://media.monado.ren/site_uploads/240401/061536_hr1.png";
+$xiv_mentor: "https://media.monado.ren/site_uploads/240401/061540_hr1.png";
+$xiv_mentor_battle: "https://media.monado.ren/site_uploads/240401/061542_hr1.png";
+$xiv_mentor_pvp: "https://media.monado.ren/site_uploads/240401/061544_hr1.png";
+$xiv_mentor_trade: "https://media.monado.ren/site_uploads/240401/061543_hr1.png";
+$xiv_triple_triad: "https://media.monado.ren/site_uploads/240401/061539_hr1.png";
+$xiv_beginner: "https://media.monado.ren/site_uploads/240401/061523_hr1.png";
+$xiv_returner: "https://media.monado.ren/site_uploads/240401/061537_hr1.png";
+
+$xiv_bh1: "https://media.monado.ren/site_uploads/240401/lv1.png";
+$xiv_bh2: "https://media.monado.ren/site_uploads/240401/lv2.png";
+$xiv_bh3: "https://media.monado.ren/site_uploads/240401/lv3.png";
+$xiv_bh4: "https://media.monado.ren/site_uploads/240401/lv4.png";
+$xiv_bh5: "https://media.monado.ren/site_uploads/240401/lv5.png";
+$xiv_bh12345: "https://media.monado.ren/site_uploads/240401/lv12345.png";
+
+$xiv_frame_lv0: "https://media.monado.ren/site_uploads/240401/job_frame.png";
+$xiv_frame_lv1: "https://media.monado.ren/site_uploads/240401/job_frame1.png";
+$xiv_frame_lv2: "https://media.monado.ren/site_uploads/240401/job_frame2.png";
+$xiv_frame_lv3: "https://media.monado.ren/site_uploads/240401/job_frame3.png";
+$xiv_frame_lv4: "https://media.monado.ren/site_uploads/240401/job_frame4.png";
+$xiv_frame_lv5: "https://media.monado.ren/site_uploads/240401/job_frame5.png";
+$xiv_frame_lv12345: "https://media.monado.ren/site_uploads/240401/job_frame12345.png";
+
+$xiv_frame_lv0d: "https://media.monado.ren/site_uploads/240401/job_frame0d.png";
+$xiv_frame_lv1d: "https://media.monado.ren/site_uploads/240401/job_frame1d.png";
+$xiv_frame_lv2d: "https://media.monado.ren/site_uploads/240401/job_frame2d.png";
+$xiv_frame_lv3d: "https://media.monado.ren/site_uploads/240401/job_frame3d.png";
+$xiv_frame_lv4d: "https://media.monado.ren/site_uploads/240401/job_frame4d.png";
+$xiv_frame_lv5d: "https://media.monado.ren/site_uploads/240401/job_frame5d.png";
+$xiv_frame_lv12345d: "https://media.monado.ren/site_uploads/240401/job_frame12345d.png";
+
+$ff14_afk: "https://media.monado.ren/custom_emojis/images/000/096/063/original/033bc01296dd56bf.png";
+$ff14_disconnecting: "https://media.monado.ren/custom_emojis/images/000/054/199/original/b85ebe74f02d611c.png";
+$ff14_duty: "https://media.monado.ren/custom_emojis/images/000/096/065/original/91d64dfb50547389.png";
+$ff14_looking4party: "https://media.monado.ren/custom_emojis/images/000/096/067/original/409eacad52b51ced.png";
+$ff14_mentor: "https://media.monado.ren/custom_emojis/images/000/096/068/original/b84f2b8f9dad30ee.png";
+$ff14_mentor_battle: "https://media.monado.ren/custom_emojis/images/000/096/069/original/77e66fb12bb464a5.png";
+$ff14_mentor_pvp: "https://media.monado.ren/custom_emojis/images/000/096/070/original/f159dd3fe1d344bd.png";
+$ff14_mentor_trade: "https://media.monado.ren/custom_emojis/images/000/096/071/original/a599bcc9830604b9.png";
+$ff14_triple_triad: "https://media.monado.ren/custom_emojis/images/000/096/072/original/cdf0bd2b0fb8b810.png";
+$ff14_beginner: "https://media.monado.ren/custom_emojis/images/000/096/064/original/4383df345de05266.png";
+$ff14_returner: "";
+
+@mixin text-outline($pre: (), $blur: 0px, $color, $suf: ()) {
+  $outline-shadows: 1px 0px $blur $color,
+      -1px 0px $blur $color,
+      0px 1px $blur $color,
+      0px -1px $blur $color;
+
+  text-shadow:
+      $pre,
+      $outline-shadows,
+      $suf;
+}
+
+@mixin text-outline-ex($pre: (), $color, $suf: ()) {
+  $outline-shadows: 1px 0px 0px $color,
+      -1px 0px 0px $color,
+      0px 1px 0px $color,
+      0px -1px 0px $color,
+      1px 0px 1px $color,
+      -1px 0px 1px $color,
+      0px 1px 1px $color,
+      0px -1px 1px $color;
+
+  text-shadow:
+      $pre,
+      $outline-shadows,
+      $suf;
+}

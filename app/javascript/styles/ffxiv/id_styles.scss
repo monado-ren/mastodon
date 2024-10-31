@@ -1,0 +1,56 @@
+@mixin id-style_self {
+    color: #e5fffc !important; //done e8fffe
+    @include text-outline-ex($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #e5fffc), $color: #09498980);
+    //@include text-outline($pre: (0px 0px 1px #00000050, 0px 0px 1px #e5fffc), $blur: 1px, $color: #09498980,);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #e5fffc, 1px 0px 1px #09498980, -1px 0px 1px #09498980, 0px 1px 1px #09498980, 0px -1px 1px #09498980;
+
+}
+
+@mixin id-style_dead {
+    color: #bfbfbf !important; //?
+    @include text-outline-ex($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #bfbfbf), $color: #00000080);
+    //@include text-outline($pre: (0px 0px 1px #00000050, 0px 0px 1px #bfbfbf), $blur: 0px, $color: #00000080);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #bfbfbf, 1px 0px 1px #80808080, -1px 0px 1px #80808080, 0px 1px 1px #80808080, 0px -1px 1px #80808080;
+}
+
+@mixin id-style_pet {
+    color: #e9ffe2 !important; //done
+    @include text-outline($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #e9ffe2), $blur: 1px, $color: #234c0480);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #e9ffe2, 1px 0px 1px #34591880, -1px 0px 1px #34591880, 0px 1px 1px #34591880, 0px -1px 1px #34591880;
+}
+
+@mixin id-style_enemy {
+    color: #ffbdbf !important; //?
+    @include text-outline($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #ffbdbf), $blur: 1px, $color: #82040480);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #ffbdbf, 1px 0px 1px #cc7a7a80, -1px 0px 1px #cc7a7a80, 0px 1px 1px #cc7a7a80, 0px -1px 1px #cc7a7a80;
+}
+
+@mixin id-style_others {
+    color: #9cd0f4 !important; //?7aa4bf80
+    @include text-outline-ex($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #9cd0f4), $color: #13314080);
+    //@include text-outline($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #9cd0f4), $blur: 0px, $color: #7aa4bf80);
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #9cd0f4, 1px 0px 0px #7aa4bf80, -1px 0px 0px #7aa4bf80, 0px 1px 0px #7aa4bf80, 0px -1px 0px #7aa4bf80
+}
+
+@mixin id-style_friend {
+    color: #ff8000 !important; //b55b0080
+    @include text-outline-ex($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #ff8000), $color: #49260480);
+    //@include text-outline($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #ff8000), $blur: 0px, $color: rgba(209, 105, 0, 0.5));
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #ff8000, 1px 0px 0px #d1690080, -1px 0px 0px #d1690080, 0px 1px 0px #d1690080, 0px -1px 0px #d1690080
+}
+@mixin id-style_talk {
+    color: #ffffff !important; //b55b0080
+    @include text-outline-ex($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 5px #000000), $color: #00000080);
+    //@include text-outline($pre: (0px 0px 2px rgba(0, 0, 0, 0.5), 0px 0px 1px #ff8000), $blur: 0px, $color: rgba(209, 105, 0, 0.5));
+    //text-shadow: 0px 0px 1px #00000050, 0px 0px 1px #ff8000, 1px 0px 0px #d1690080, -1px 0px 0px #d1690080, 0px 1px 0px #d1690080, 0px -1px 0px #d1690080
+}
+
+.column[aria-label='本站时间轴'],
+.column[aria-label='本站時間軸'],
+.column[aria-label='本機時間軸'],
+.column[aria-label='ローカルタイムライン'],
+.column[aria-label='Local timeline'] {
+    .status__display-name strong {
+        @include id-style_self;
+    }
+}

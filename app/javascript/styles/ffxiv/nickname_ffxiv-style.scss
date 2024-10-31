@@ -1,0 +1,31 @@
+//--FFXIV风格id--
+.column[aria-label='主页'],
+.column[aria-label='主頁'],
+.column[aria-label='首頁'],
+.column[aria-label='ホーム'],
+.column[aria-label='Home'] {
+    .status__display-name strong {
+        @include id-style_friend;
+    }
+}
+
+.column[aria-label='跨站公共时间轴'],
+.column[aria-label='聯邦時間軸'],
+.column[aria-label='跨站時間軸'],
+.column[aria-label='連合タイムライン'],
+.column[aria-label='Federated timeline'] {
+    .status__display-name strong {
+        @include id-style_others;
+    }
+}
+
+
+.account__header__tabs__name span{
+    font-size: 17px;
+    @include id-style_talk;
+}
+.status__display-name strong,
+.display-name__html {
+    font-size: 17px;
+    @include id-style_others;
+}

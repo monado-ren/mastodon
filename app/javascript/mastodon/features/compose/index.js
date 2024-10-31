@@ -18,6 +18,8 @@ import { mascot } from '../../initial_state';
 import Icon from 'mastodon/components/icon';
 import { logOut } from 'mastodon/utils/log_out';
 
+import CDkoHalloweenDrawerCanvasComponent from '../ui/components/cdko_halloween_drawer';
+
 const messages = defineMessages({
   start: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
   home_timeline: { id: 'tabs_bar.home', defaultMessage: 'Home' },
@@ -130,7 +132,7 @@ class Compose extends React.PureComponent {
             <ComposeFormContainer />
 
             <div className='drawer__inner__mastodon'>
-              <img alt='' draggable='false' src={mascot || elephantUIPlane} />
+              <CDkoHalloweenDrawerCanvasComponent />
             </div>
           </div>}
 
