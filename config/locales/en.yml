@@ -1433,7 +1433,6 @@ en:
     nintendo-red: Nintendo Sytle (Red)
     switch-black: Switch UI (Basic Black)
     switch-white: Switch UI (Basic White)
-    ffxiv: Final Fantasy XIV Style (Halloween)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
