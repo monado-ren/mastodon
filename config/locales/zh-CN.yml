@@ -1411,7 +1411,6 @@ zh-CN:
     nintendo-red: 任天堂风格 (红)
     switch-black: Switch系统界面 (黑色系)
     switch-white: Switch系统界面 (白色系)
-    ffxiv: 守护天节期间限定
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"
