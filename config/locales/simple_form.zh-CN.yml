@@ -42,6 +42,36 @@ zh-CN:
         custom_emoji-ff14_mentor_pvp: 原作：SQEX《最终幻想XIV》
         custom_emoji-ff14_mentor_trade: 原作：SQEX《最终幻想XIV》
         custom_emoji-ff14_mentor_battle: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_disconnecting: |
+          失去了与服务器的连接。
+
+          原作：SQEX《最终幻想XIV》
+        splatoween3-wizard: |
+          如果进入幻想世界，想成为魔法师吗？
+
+          原作：任天堂《斯普拉遁3》
+        splatoween3-knight: |
+          如果进入幻想世界，想成为骑士吗？
+
+          原作：任天堂《斯普拉遁3》
+        splatoween3-ninja: |
+          如果进入幻想世界，想成为忍者吗？
+
+          原作：任天堂《斯普拉遁3》
+        korok_mask: |
+          仿照克洛格们戴着的面具制作而成。
+          如果有克洛格隐藏在附近，就会咯噔咯噔地摇晃。
+          这样的珍品并非轻易就能得到。
+
+          原作：任天堂《塞尔达传说 旷野之息》
+        alarmo: |
+          让你一觉醒来就身在游戏世界中的神奇闹钟。
+          「Alarmo（阿勒莫）」是款会对你的动作有所反应的闹钟，当你活动身体，就会响起游戏内的音效。
+          
+          任天堂新硬件，首发有马力欧、塞尔达、喷喷、皮克敏、健身环护航！
+          还只要600块钱，赢！
+
+          原作：任天堂
       account_alias:
         acct: 指定你想要迁移过来的原账号：用户名@站点域名
       account_migration:
