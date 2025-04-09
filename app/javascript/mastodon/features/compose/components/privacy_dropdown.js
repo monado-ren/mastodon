@@ -242,7 +242,7 @@ class PrivacyDropdown extends React.PureComponent {
 
     if (!this.props.noDirect) {
       this.options.push(
-        { icon: 'at', value: 'direct', text: formatMessage(messages.direct_short), meta: formatMessage(messages.direct_long) },
+        { icon: 'envelope', value: 'direct', text: formatMessage(messages.direct_short), meta: formatMessage(messages.direct_long) },
       );
     }
   }
