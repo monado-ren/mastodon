@@ -1,5 +1,27 @@
 ---
 en:
+  avatar_frames:
+    cdko: CDko
+    ffxiv: Final Fantasy XIV Job
+    salmonrunhelp: Salmon Run 'Help'
+    splatoon3: Splatoon 3
+    zonai: Zonai
+    kirby: Kirby
+    default: Default (Square)
+    circle: Default (Circle)
+    jieenado: Paper Monado
+    custom_emoji-ff14_beginner: Final Fantasy XIV - Beginner
+    custom_emoji-ff14_returner: Final Fantasy XIV - Returner
+    custom_emoji-ff14_mentor: Final Fantasy XIV - Mentor
+    custom_emoji-ff14_mentor_pvp: Final Fantasy XIV - Mentor (PVP)
+    custom_emoji-ff14_mentor_trade: Final Fantasy XIV - Mentor (Trade)
+    custom_emoji-ff14_mentor_battle: Final Fantasy XIV - Mentor (Battle)
+    custom_emoji-ff14_disconnecting: Final Fantasy XIV - Disconnecting
+    splatoween3-wizard: Splatoween - Wizard
+    splatoween3-knight: Splatoween - Knight
+    splatoween3-ninja: Splatoween - Ninja
+    korok_mask: Korok Mask
+    alarmo: Nintendo Sound Clock Alarmo
   about:
     about_hashtag_html: These are public posts tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
     about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance, ethical design, and decentralization! Own your data with Mastodon!'
@@ -1625,6 +1647,7 @@ en:
     switch-white: Switch UI (Basic White)
     switch-black: Switch UI (Basic Black)
     nintendo-red: Nintendo Sytle (Red)
+    ffxiv: Final Fantasy XIV Style (Dark)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"

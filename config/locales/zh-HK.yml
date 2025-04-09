@@ -1,5 +1,27 @@
 ---
 zh-HK:
+  avatar_frames:
+    cdko: CD子趴趴
+    ffxiv: 最终幻想XIV风格
+    salmonrunhelp: 鱿泳圈
+    splatoon3: 椰子俱乐部
+    zonai: 王国之泪
+    kirby: 卡比塞满嘴
+    default: 默认（方形）
+    circle: 默认（圆形）
+    jieenado: 纸片嗼纳多
+    custom_emoji-ff14_beginner: 最终幻想XIV-新人
+    custom_emoji-ff14_returner: 最终幻想XIV-回归者
+    custom_emoji-ff14_mentor: 最终幻想XIV-指导者
+    custom_emoji-ff14_mentor_pvp: 最终幻想XIV-对战指导者
+    custom_emoji-ff14_mentor_trade: 最终幻想XIV-制作采集指导者
+    custom_emoji-ff14_mentor_battle: 最终幻想XIV-战斗指导者
+    custom_emoji-ff14_disconnecting: 最终幻想XIV-通信切断
+    splatoween3-wizard: 万圣节祭典-魔法师
+    splatoween3-knight: 万圣节祭典-骑士
+    splatoween3-ninja: 万圣节祭典-忍者
+    korok_mask: 克洛格的面具
+    alarmo: 任天堂音响闹钟 Alarmo（阿勒莫）
   about:
     about_hashtag_html: 這些是包含「<strong>#%{hashtag}</strong>」標籤的公開文章。只要你是任何聯盟網站的用戶，便可以與他們互動。
     about_mastodon_html: Mastodon（萬象）是屬於未來的社交網路︰無廣告煩擾、無企業監控、設計講道義、分散無大台！立即重奪個人資料的控制權，使用 Mastodon 吧！

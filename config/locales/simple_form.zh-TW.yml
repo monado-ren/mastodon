@@ -2,6 +2,76 @@
 zh-TW:
   simple_form:
     hints:
+      avatar_frames:
+        cdko: |
+          如果你想把CD子顶在头上的话
+          
+          作者：@aapa
+        ffxiv: |
+          狒批来了！  (捏鼻子)别太喜欢你那狒狒14了！
+          是嗼站2024年愚人节活动「嗼古莫古★大入侵 ～万愚～」的主题头像框
+          
+          原作：SQEX《最终幻想XIV》
+        salmonrunhelp: |
+          一旦换上了就让人忍不住连按求助的神奇头像框。
+
+          作者：@51miki 原作：任天堂《斯普拉遁》系列
+        splatoon3: |
+          孤高的酥脆旅行者——阿龙，在旅途中发现的超～酥脆火热涂鸦！各位心跳加速了吗～？
+          
+          原作：任天堂《斯普拉遁3》
+        zonai: |
+          充满左纳乌之力的神秘纹样，仿佛充满了让人上天入地的能量。
+
+          作者：@lmilmi 原作：任天堂《塞尔达传说 王囯之泪》
+        kirby: |
+          素材取自游研社的h5小程序"卡比头像框生成器"，是粉红色恶魔！
+          
+          作者：游研社 原作：任天堂《星之卡比》系列
+        default: ''
+        circle: ''
+        jieenado: |
+          神秘秃头男子受神秘修服务器男子委托绘制的纸片嗼纳多，后者应用神秘西丝丝神力使其能够转动。
+          是嗼站2022年愚人节活动「大剑转转转酒吧」的保底道具，会以25秒一圈的速度旋转。
+          画面有那么大点吵，不建议使用。
+
+          原作：MONOLITHSOFT《异度神剑1》
+        custom_emoji-ff14_beginner: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_returner: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_pvp: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_trade: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_mentor_battle: 原作：SQEX《最终幻想XIV》
+        custom_emoji-ff14_disconnecting: |
+          失去了与服务器的连接。
+
+          原作：SQEX《最终幻想XIV》
+        splatoween3-wizard: |
+          如果进入幻想世界，想成为魔法师吗？
+
+          原作：任天堂《斯普拉遁3》
+        splatoween3-knight: |
+          如果进入幻想世界，想成为骑士吗？
+
+          原作：任天堂《斯普拉遁3》
+        splatoween3-ninja: |
+          如果进入幻想世界，想成为忍者吗？
+
+          原作：任天堂《斯普拉遁3》
+        korok_mask: |
+          仿照克洛格们戴着的面具制作而成。
+          如果有克洛格隐藏在附近，就会咯噔咯噔地摇晃。
+          这样的珍品并非轻易就能得到。
+
+          原作：任天堂《塞尔达传说 旷野之息》
+        alarmo: |
+          让你一觉醒来就身在游戏世界中的神奇闹钟。
+          「Alarmo（阿勒莫）」是款会对你的动作有所反应的闹钟，当你活动身体，就会响起游戏内的音效。
+          
+          任天堂新硬件，首发有马力欧、塞尔达、喷喷、皮克敏、健身环护航！
+          还只要600块钱，赢！
+
+          原作：任天堂
       account_alias:
         acct: 指定要移動的帳號的「使用者名稱@網域名稱」
       account_migration:
@@ -127,6 +197,7 @@ zh-TW:
       defaults:
         autofollow: 邀請別人跟隨您的帳號
         avatar: 大頭貼
+        avatar_frame_type: 头像框
         bot: 此帳號是台機器人
         chosen_languages: 過濾語言
         confirm_new_password: 確認新密碼
