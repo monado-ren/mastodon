@@ -22,6 +22,9 @@ ja:
     splatoween3-ninja: 万圣节祭典-忍者
     korok_mask: 克洛格的面具
     alarmo: 任天堂音响闹钟 Alarmo（阿勒莫）
+    daimao: 呆猫（水芸风格）
+    hiho: 杰克霜精
+    hiho-evil: 邪恶霜精
   about:
     about_hashtag_html: ハッシュタグ <strong>#%{hashtag}</strong> の公開投稿です。どこか連合に参加しているSNS上にアカウントを作れば、会話に参加することができます。
     about_mastodon_html: Mastodonは、オープンなウェブプロトコルを採用した、自由でオープンソースなソーシャルネットワークです。電子メールのような分散型の仕組みを採っています。

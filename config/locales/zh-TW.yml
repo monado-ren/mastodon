@@ -22,6 +22,9 @@ zh-TW:
     splatoween3-ninja: 万圣节祭典-忍者
     korok_mask: 克洛格的面具
     alarmo: 任天堂音响闹钟 Alarmo（阿勒莫）
+    daimao: 呆猫（水芸风格）
+    hiho: 杰克霜精
+    hiho-evil: 邪恶霜精
   about:
     about_hashtag_html: 這些是包含「<strong>#%{hashtag}</strong>」標籤的公開文章。只要您有任何 Mastodon 站點、或者其他站點的使用者，便可以與他們互動。
     about_mastodon_html: Mastodon （長毛象）是一個<em>自由、開放原始碼</em>的社群網站。它是一個分散式的服務，避免您的通訊被單一商業機構壟斷操控。請您選擇一家您信任的 Mastodon 站點，在上面建立帳號，然後您就可以和任一 Mastodon 站點上的使用者互通，享受無縫的<em>社群網路</em>交流。

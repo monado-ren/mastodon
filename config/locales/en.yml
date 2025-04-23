@@ -22,6 +22,9 @@ en:
     splatoween3-ninja: Splatoween - Ninja
     korok_mask: Korok Mask
     alarmo: Nintendo Sound Clock Alarmo
+    daimao: Daimao
+    hiho: Hiho
+    hiho-evil: Hiho(evil)
   about:
     about_hashtag_html: These are public posts tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
     about_mastodon_html: 'The social network of the future: No ads, no corporate surveillance, ethical design, and decentralization! Own your data with Mastodon!'
