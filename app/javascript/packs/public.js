@@ -129,6 +129,15 @@ function main() {
       }
     });
 
+    delegate(document, '#registration_user_invite_request_attributes_text', 'input', () => {
+      const request_text = document.getElementById('registration_user_invite_request_attributes_text');
+      if (request_text.value.length < 32) {
+        request_text.setCustomValidity((new IntlMessageFormat('字符数不足32，请确定是否完整回答了以下问题？', locale)).format());
+      } else {
+        request_text.setCustomValidity('');
+      }
+    });
+
     delegate(document, '#user_password,#user_password_confirmation', 'input', () => {
       const password = document.getElementById('user_password');
       const confirmation = document.getElementById('user_password_confirmation');
